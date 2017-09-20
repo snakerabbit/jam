@@ -8,9 +8,9 @@ const App = () =>(
     <h1>JAM</h1>
       <AuthRoute path='/login' component={SessionFormContainer}/>
       <AuthRoute path='/signup' component={SessionFormContainer}/>
-      <Link to='/login'>Login</Link>
+      <Link to='/login'>Login(temp link)</Link>
       <br/>
-      <Link to='/signup'>Signup</Link>
+      <Link to='/signup'>Signup(temp link)</Link>
 
   </div>
 );
