@@ -1,11 +1,12 @@
 import React from 'react';
+import { withRouter} from 'react-router-dom';
 
 class SessionForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       username: '',
-      password: ''
+      password: '',
     };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -28,11 +29,39 @@ class SessionForm extends React.Component {
     });
   }
 
+  navLinks (){
+    if (this.props.formType === 'login'){
+      return <Link to="/signup">Sign Up Instead</Link>;
+    } else {
+      return <Link to="/login">Log In Instead</Link>;
+    }
+  }
+
   render (){
     return(
       <div>
-
+        <form onSubmit={this.handleSubmit} className='login-form'>
+          Welcome to JAM!
+          <br/>
+          <label>Username:
+            <input type='text'
+                    value={this.state.username}
+                    onChange={this.update('username')}
+                    className='login-input'/>
+          </label>
+          <br/>
+          <label>Password:
+            <input type='text'
+                    value={this.state.password}
+                    onChange={this.update('password')}
+                    className='login-input'/>
+          </label>
+          <br/>
+          <input type="submit" value='Submit'/>
+        </form>
       </div>
     );
   }
 }
+
+export default withRouter(SessionForm);
