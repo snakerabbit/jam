@@ -14,6 +14,5 @@ export default (state = [], action) =>{
       return _nullErrors;
     default:
       return state;
-
   }
 };

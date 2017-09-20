@@ -38,11 +38,11 @@ class SessionForm extends React.Component {
   }
 
   render (){
+    const text = (this.props.formType === 'login') ? "LOGIN: " : "SIGNUP: ";
     return(
       <div>
         <form onSubmit={this.handleSubmit} className='login-form'>
-          Welcome to JAM!
-          <br/>
+          <p>{text}</p>
           <label>Username:
             <input type='text'
                     value={this.state.username}
@@ -51,7 +51,7 @@ class SessionForm extends React.Component {
           </label>
           <br/>
           <label>Password:
-            <input type='text'
+            <input type='password'
                     value={this.state.password}
                     onChange={this.update('password')}
                     className='login-input'/>
