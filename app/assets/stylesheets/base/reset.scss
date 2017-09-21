@@ -20,6 +20,15 @@ img {
   height: auto;
 }
 
+a {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+  color: white;
+}
+
 button,
 input[type="submit"] {
   cursor: pointer;
@@ -36,6 +45,5 @@ input[type="submit"] {
   height: 100%;
   width: 100%;
   display: block;
-  padding: 50px;
   float: right;
 }

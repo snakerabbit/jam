@@ -1,0 +1,48 @@
+.nav-bar {
+  width: 100%;
+  background-color: black;
+  display: block;
+  color: white;
+  height: 75px;
+  opacity: 0.6;
+}
+
+.navbar-logged-out {
+  display: inline;
+  float: right;
+}
+
+.navbar-logged-out * {
+  display: inline;
+  padding-right: 30px;
+}
+
+.navbar-logged-in {
+  display: inline;
+  float: right;
+
+}
+.navbar-logged-in * {
+  display: inline;
+  padding-right: 30px;
+}
+
+.navbar-logged-in > a {
+  cursor: pointer;
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-size: 14px;
+  color: white;
+
+}
+
+.nav-bar * {
+  display: inline;
+  padding-top: 20px;
+}
+
+.navbar-logo {
+  font-size: 24pt;
+  padding-left: 30px;
+  padding-top: 20px;
+
+}

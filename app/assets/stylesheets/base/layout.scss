@@ -11,25 +11,7 @@ body {
 	font-size: 14px;
 }
 
-button {
-	background-color: blue;
-	border-color: blue;
-	color: white;
-	font-weight: bold;
-	padding: 7px 9px;
-	border-radius: 3px;
-	transition: background-color 0.3s;
-	text-transform: uppercase;
-	font-size: 11px;
-	text-align: center;
-  font-family: 'Open Sans Condensed', sans-serif;
-}
-
-button:hover {
-	background-color: blue;
-  border-color: blue;
-}
 
 a:hover {
-	text-decoration: underline;
+	font-weight: bolder;
 }

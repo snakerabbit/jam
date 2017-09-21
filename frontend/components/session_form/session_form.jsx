@@ -38,12 +38,12 @@ class SessionForm extends React.Component {
   }
 
   render (){
-    const text = (this.props.formType === 'login') ? "LOGIN: " : "SIGNUP: ";
+    const text = (this.props.formType === 'login') ? "LOG IN: " : "SIGN UP: ";
     return(
       <div>
         <form onSubmit={this.handleSubmit} className='login-form'>
           <h3>{text}</h3>
-          <label>Username: 
+          <label>Username:
             <input type='text'
                     value={this.state.username}
                     onChange={this.update('username')}
