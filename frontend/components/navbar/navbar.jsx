@@ -8,6 +8,7 @@ export default ({currentUser, logout}) =>{
     <div className='navbar-logged-in'>
       <h3>{currentUser.username}</h3>
       <a onClick={logout}>Logout</a>
+      <Link to='/users'>Browse</Link>
     </div>
   ) : (
     <div className = 'navbar-logged-out'>

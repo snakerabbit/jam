@@ -1,12 +1,16 @@
 
+
+
 body {
-  background-color: white;
+  background-color: black;
   background-image: url('https://static.pexels.com/photos/442540/pexels-photo-442540.jpeg');
+  background-repeat: no-repeat;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
   background-position: center;
+  width: 100%;
  }
 
 
@@ -45,5 +49,41 @@ input[type="submit"] {
   height: 100%;
   width: 100%;
   display: block;
+}
 
+.user-imgs {
+  height: 200px;
+  width: 200px;
+  border-style:hidden;
+  border-radius: 50px;
+}
+
+.user-display {
+  display:inline-block;
+}
+
+.user-index-item {
+  display: inline-block;
+  margin: 0 auto;
+  padding-right: 20px;
+}
+
+.user-index-item * {
+  align-items: center;
+}
+
+.user-index {
+  align-items:center;
+}
+
+.user-index > * {
+  padding-right: 30px;
+}
+
+p {
+  align-self: center;
+  display: block;
+  padding-left: 30px;
+  font-size: 14pt;
+  color: white;
 }

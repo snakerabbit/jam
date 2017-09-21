@@ -3,7 +3,8 @@ import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import Root from './components/root';
 import * as SessionApiUtil from './util/session_api_util';//testing only
-
+import * as UserApiUtil from './util/user_api_util';
+import { fetchUsers } from './actions/user_actions';
 
 document.addEventListener("DOMContentLoaded", ()=>{
   const root = document.getElementById('root');
@@ -14,6 +15,8 @@ document.addEventListener("DOMContentLoaded", ()=>{
   } else {
     store = configureStore();
   }
+  window.getState = store.getState(); //testing only
   window.logout = SessionApiUtil.logout;//testing only
+  window.fetchUsers = UserApiUtil.fetchUsers;//testing only
   ReactDOM.render(<Root store={store}/>, root);
 });
