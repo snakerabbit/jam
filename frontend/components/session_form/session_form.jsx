@@ -9,6 +9,7 @@ class SessionForm extends React.Component {
       password: '',
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleGuestLogin = this.handleGuestLogin.bind(this);
   }
 
   componentWillReceiveProps(newProps){
@@ -28,6 +29,17 @@ class SessionForm extends React.Component {
       [field]: e.target.value
     });
   }
+
+
+  handleGuestLogin() {
+      if (this.props.formType == "login") {
+        return (
+          <button type="submit"
+                  onClick={() => this.setState({username: "guest", password: 'password'})}>Guest Login</button>
+        );
+      }
+  }
+
 
   navLinks (){
     if (this.props.formType === 'login'){
@@ -60,7 +72,13 @@ class SessionForm extends React.Component {
           </label>
           <br/>
           <br/>
-          <input type="submit" value='Submit'/>
+            <input type="submit" value='Submit'/>
+          <br/>
+          <br/>
+          <button type="submit"
+                  onClick={() => this.setState({username: "guest", password: 'password'})}>Guest Login</button>
+          <br/>
+          <br/>
         </form>
       </div>
     );
