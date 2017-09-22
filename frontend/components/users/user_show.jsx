@@ -21,9 +21,7 @@ class UserShow extends React.Component {
     return(
       <div className = 'user-profile'>
         <ul>
-          <container className ='user-img-container'>
-            <img src={user.image_url} className='user-imgs'/>
-          </container>
+          <img src={user.image_url} className='user-imgs'/>
           <h1>{user.username}</h1>
           <h2>City: {user.city}</h2>
           <h2>Instrument: {user.instrument}</h2>

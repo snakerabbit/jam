@@ -1,3 +1,58 @@
 // Place all the styles related to the Api::Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.user-profile {
+  background-color: black;
+  opacity: 0.8;
+  color: white;
+  display: block;
+  height: 400px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.user-profile > ul {
+  display: block;
+  width: 40%;
+  height: 100%;
+  margin: 0 auto;
+  opacity: 1.0;
+}
+
+.user-profile > ul * {
+  display: flex;
+  justify-content: center;
+  width: 45%;
+  margin: 0 auto;
+}
+
+.user-imgs {
+  height: 250px;
+  width: 100px;
+  border-style:hidden;
+  border-radius: 50px;
+  padding-top: 10px;
+
+}
+
+.user-display {
+  display:inline-block;
+}
+
+.user-index-item {
+  display: inline-block;
+  margin: 0 auto;
+  padding-right: 20px;
+}
+
+.user-index-item * {
+  align-items: center;
+}
+
+.user-index {
+  align-items:center;
+}
+.user-index > * {
+  padding-right: 30px;
+}

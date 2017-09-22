@@ -51,39 +51,9 @@ input[type="submit"] {
   display: block;
 }
 
-.user-img-container {
-  height: 250px;
-  width: 200px;
 
-}
-.user-imgs {
-  height: 100%;
-  width: 100%;
-  border-style:hidden;
-  border-radius: 50px;
-}
 
-.user-display {
-  display:inline-block;
-}
 
-.user-index-item {
-  display: inline-block;
-  margin: 0 auto;
-  padding-right: 20px;
-}
-
-.user-index-item * {
-  align-items: center;
-}
-
-.user-index {
-  align-items:center;
-}
-
-.user-index > * {
-  padding-right: 30px;
-}
 
 p {
   align-self: center;
@@ -91,29 +61,4 @@ p {
   padding-left: 30px;
   font-size: 14pt;
   color: white;
-}
-
-.user-profile {
-  background-color: black;
-  opacity: 0.8;
-  color: white;
-  display: block;
-  height: 400px;
-  width: 90%;
-  margin: 0 auto;
-}
-
-.user-profile > ul {
-  display: block;
-  width: 40%;
-  height: 100%;
-  margin: 0 auto;
-  opacity: 1.0;
-}
-
-.user-profile > ul * {
-  display: flex;
-  justify-content: center;
-  width: 60%;
-  margin: 0 auto;
 }
