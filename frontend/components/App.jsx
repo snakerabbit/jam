@@ -5,6 +5,7 @@ import {AuthRoute, ProtectedRoute} from '../util/route_util';
 import Home from './home/home';
 import NavBarContainer from './navbar/navbar_container';
 import UserIndexContainer from './users/user_index_container';
+import UserShowContainer from './users/user_show_container';
 
 const App = () =>(
   <div >
@@ -13,11 +14,10 @@ const App = () =>(
     </div>
       <br/>
       <br/>
-      <AuthRoute path='/login' component={SessionFormContainer}/>
-      <AuthRoute path='/signup' component={SessionFormContainer}/>
-      <ProtectedRoute path='/users' component={UserIndexContainer}/>
+      <AuthRoute exact path='/login' component={SessionFormContainer}/>
+      <AuthRoute exact path='/signup' component={SessionFormContainer}/>
       <Route exact path='/' component ={Home}/>
-      <ProtectedRoute path='/' component={UserIndexContainer}/>
+      <ProtectedRoute exact path='/users/:userId' component={UserShowContainer}/>
 
   </div>
 );

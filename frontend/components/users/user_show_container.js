@@ -1,10 +1,12 @@
 import { connect } from 'react-redux';
 import UserShow from './user_show';
-import { fetchUser, updateUser } from '../../actions/post_actions';
+import { fetchUser, updateUser } from '../../actions/user_actions';
 import { withRouter } from 'react-router-dom';
 
+
+
 const mapStateToProps = (state, ownProps) => ({
-  user: state.users[ownProps.match.params.postId]
+  user: state.users[ownProps.match.params.userId]
 });
 
 const mapDispatchToProps = dispatch => ({
