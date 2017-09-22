@@ -19,7 +19,7 @@ class UserShow extends React.Component {
   render () {
     const user = this.props.user;
     return(
-      <div className = 'user-profile'>
+      <div className = 'user-stats'>
         <ul>
           <img src={user.image_url} className='user-imgs'/>
           <h1>{user.username}</h1>
@@ -27,6 +27,9 @@ class UserShow extends React.Component {
           <h2>Instrument: {user.instrument}</h2>
           <h2>Looking For: {user.looking_for}</h2>
         </ul>
+      </div>
+      <div>
+
       </div>
     );
   }
