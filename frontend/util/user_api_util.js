@@ -1,4 +1,4 @@
-export const fetchUsers = () => {
+export const fetchUsers = instrument => {
   return(
     $.ajax({
       method: 'GET',

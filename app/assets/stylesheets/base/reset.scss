@@ -21,11 +21,13 @@ ul {
 img {
   display: block;
   width: 100%;
-  height: auto;
+  height:inherit;
 }
 
 a {
   text-decoration: none;
+  padding-top: 10px;
+
 }
 
 a:visited {
@@ -41,8 +43,11 @@ input[type="submit"] {
   appearance: none;
   font-family: 'Open Sans Condensed', sans-serif;
   border-radius: 5px;
-  background-color: grey;
+  background-color: white;
   color: black;
+}
+a:hover {
+  text-decoration:underline;
 }
 
 #root {

@@ -10,9 +10,9 @@ class UserIndex extends React.Component {
 
   render () {
     return(
-      <div>
+      <div className='browse-users'>
           <div className='index-search-bar'>
-            <IndexSearchBar users={this.props.users}/>
+            <IndexSearchBar users={this.props.users} fetchUsers={this.props.fetchUsers.bind(this)}/>
           </div>
           <div className = 'user-index'>
           <ul>

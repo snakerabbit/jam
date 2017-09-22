@@ -6,16 +6,16 @@
   background-color: black;
   color: white;
   opacity: 0.6;
-  border-style: double;
   height: 100%;
-  width: 200px;;
-  flex-direction: row;
-  flex-wrap:wrap;
+  width: 300px;;
   margin: 0 auto;
+  padding: 50px;
+  border-radius: 20px;
 
 }
 
 .login-form * {
+  font-size: 14pt;
 }
 
 h3 {

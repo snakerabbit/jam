@@ -17,11 +17,14 @@ const App = () =>(
       <br/>
       <br/>
       <br/>
-      <AuthRoute exact path='/login' component={SessionFormContainer}/>
-      <AuthRoute exact path='/signup' component={SessionFormContainer}/>
+      <AuthRoute path='/login' component={SessionFormContainer}/>
+      <AuthRoute path='/signup' component={SessionFormContainer}/>
       <Route exact path='/' component ={Home}/>
-      <Route exact path='/users/' component={UserIndexContainer}/>
-      <ProtectedRoute path='/users/:userId' component={UserShowContainer}/>
+      <Switch>
+        <ProtectedRoute path='/users/:userId' component={UserShowContainer}/>
+        <ProtectedRoute path='/users' component={UserIndexContainer}/>
+      </Switch>
+
 
   </div>
 );

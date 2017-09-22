@@ -27,3 +27,7 @@ export const fetchUser = id => dispatch => (
 export const updateUser = updatedUser => dispatch => (
   UserApiUtil.updateUser(updatedUser).then(user => dispatch(receiveUser(user)))
 );
+
+export const fetchFilteredUsers = instrument => dispatch => (
+  UserApiUtil.fetchUsers(instrument).then(users => dispatch(receiveAllUsers(users)))
+);

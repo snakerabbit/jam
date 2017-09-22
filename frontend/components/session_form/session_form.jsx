@@ -41,12 +41,16 @@ class SessionForm extends React.Component {
   }
 
 
-  navLinks (){
-    if (this.props.formType === 'login'){
-      return <Link to="/signup">Sign Up Instead</Link>;
-    } else {
-      return <Link to="/login">Log In Instead</Link>;
-    }
+  renderErrors() {
+    return(
+      <ul>
+      {this.props.errors.map((error, index) => (
+        <li key={`error-${index}`}>
+          <p>{error}</p>
+        </li>
+      ))}
+    </ul>
+  );
   }
 
   render (){
@@ -55,6 +59,7 @@ class SessionForm extends React.Component {
       <div>
         <form onSubmit={this.handleSubmit} className='login-form'>
           <h3>{text}</h3>
+          {this.renderErrors()}
           <label>Username:
             <input type='text'
                     value={this.state.username}
