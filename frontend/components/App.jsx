@@ -14,6 +14,9 @@ const App = () =>(
     </div>
       <br/>
       <br/>
+      <br/>
+      <br/>
+      <br/>
       <AuthRoute exact path='/login' component={SessionFormContainer}/>
       <AuthRoute exact path='/signup' component={SessionFormContainer}/>
       <Route exact path='/' component ={Home}/>

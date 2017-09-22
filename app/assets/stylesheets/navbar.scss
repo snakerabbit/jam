@@ -5,6 +5,7 @@
   color: white;
   height: 75px;
   opacity: 0.6;
+  position: fixed;
 }
 
 .navbar-logged-out {
@@ -37,7 +38,6 @@
 
 .nav-bar * {
   display: inline;
-  padding-top: 20px;
 }
 
 .navbar-logo {
@@ -45,4 +45,9 @@
   padding-left: 30px;
   padding-top: 20px;
 
+}
+.logo {
+  height: 60px;
+  width: 60px;
+  padding-top: none;
 }

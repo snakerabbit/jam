@@ -35,7 +35,10 @@ export default ({currentUser, logout}) =>{
 
   return(
     <header className="nav-bar">
-      <Link to='/' className='navbar-logo'>jam</Link>
+      <Link to='/' className='navbar-logo'>
+      <img src='https://image.ibb.co/mjPHyk/Logomakr_6_Bg8_Wn.png'
+           className='logo'/>
+      </Link>
       <div>{navdisplay}</div>
     </header>
   );

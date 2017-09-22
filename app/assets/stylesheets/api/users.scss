@@ -10,6 +10,7 @@
   height: 400px;
   width: 90%;
   margin: 0 auto;
+  padding-top: 100px;
 }
 
 .user-profile > ul {
@@ -29,7 +30,7 @@
 
 .user-imgs {
   height: 250px;
-  width: 100px;
+  width: 200px;
   border-style:hidden;
   border-radius: 50px;
   padding-top: 10px;
@@ -43,7 +44,7 @@
 .user-index-item {
   display: inline-block;
   margin: 0 auto;
-  padding-right: 20px;
+  padding-right: 50px;
 }
 
 .user-index-item * {
@@ -52,6 +53,10 @@
 
 .user-index {
   align-items:center;
+  padding-top: 100px;
+  display: flex;
+  width: 80%;
+  margin: 0 auto;
 }
 .user-index > * {
   padding-right: 30px;
