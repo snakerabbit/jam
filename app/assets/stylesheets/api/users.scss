@@ -44,7 +44,9 @@
 .user-index-item {
   display: inline-block;
   margin: 0 auto;
-  padding-right: 50px;
+  padding-right: 25px;
+  padding-left: 25px;
+  justify-content: space-between;
 }
 
 .user-index-item * {
@@ -60,4 +62,45 @@
 }
 .user-index > * {
   padding-right: 30px;
+  margin: 0 auto;
+}
+
+.about-me {
+  background-color: black;
+  opacity: 0.7;
+  color: white;
+  margin: 0 auto;
+  width: 90%;
+  height: 100%;
+}
+
+.index-search-bar {
+  background-color: black;
+  opacity: 0.9;
+  width: 90%;
+  margin: 0 auto;
+  height: 300px;
+  color: white;
+}
+
+.index-search-container {
+  width: 50%;
+  margin: 0 auto;
+  padding-top: 150px;
+}
+
+.index-search-bar * {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  font-size: 22px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+select,input{
+  background-color: white;
+  border-style:none;
+  border-radius: 10px;
+  opacity: 0.8;
 }

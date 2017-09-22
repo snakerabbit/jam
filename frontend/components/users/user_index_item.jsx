@@ -5,7 +5,6 @@ const UserIndexItem = ({user}) =>{
   return(
     <Link to={`/users/${user.id}`}>
       <div className='user-display'>
-
         <container className = 'user-img-container'>
           <img src={user.image_url} className='user-imgs'/>
         </container>
