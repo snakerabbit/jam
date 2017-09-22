@@ -1,10 +1,8 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 
-const IndexSearchBar = ({users}) =>{
-  console.log(users);
-
-
+const IndexSearchBar = ({users, fetchUsers}) =>{
+  
   return(
     <div className='index-search-container'>
       <h3>Search Users By: </h3>
@@ -14,7 +12,7 @@ const IndexSearchBar = ({users}) =>{
         <option>Guitarist</option>
         <option>Bass Guitarist</option>
         <option>Drummer</option>
-        <option>Keyboardist/Pianist</option>
+        <option>Keyboardist</option>
         <option>All Musicians</option>
       </select>
     </div>
