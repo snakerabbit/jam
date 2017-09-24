@@ -12,8 +12,7 @@ class UserIndex extends React.Component {
   }
 
   componentDidMount(){
-  this.props.fetchUsers(this.state.instrument);
-  console.log(this.props.users);
+      this.props.fetchUsers(this.state.instrument);
   }
 
   handleFilter (e) {
@@ -27,11 +26,11 @@ class UserIndex extends React.Component {
     return(
       <select defaultValue='Instrument' onChange={this.handleFilter}>
         <option value=''>Instrument</option>
-        <option value='voice'>Vocalist</option>
         <option value='guitar'>Guitarist</option>
         <option value='bass guitar'>Bass Guitarist</option>
         <option value='drums'>Drummer</option>
         <option value='piano'>Keyboardist</option>
+        <option value='voice'>Vocalist</option>
       </select>
     );
   }

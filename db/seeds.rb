@@ -40,3 +40,10 @@ user3 = User.create(username: "Tia",
 guest = User.create(username: "guest",
                     password:"password",
                     about_me: "I am a guest user")
+user4 = User.create(username: "Bjork",
+                   password:"123321",
+                   city: "San Francisco",
+                   instrument: "voice",
+                   looking_for:"pianist",
+                   image_url:"https://vignette.wikia.nocookie.net/4chanmusic/images/0/08/Mai_wiafu.jpg/revision/latest?cb=20151031003036",
+                   about_me: "I am an Icelandic Singer")

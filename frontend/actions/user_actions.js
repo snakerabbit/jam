@@ -24,10 +24,6 @@ export const fetchUsers = (instrument) => {
   };
 };
 
-export const fetchAllUsers = () => dispatch => (
-  UserApiUtil.fetchAllUsers().then(users => dispatch(receiveAllUsers(users)))
-);
-
 export const fetchUser = id => dispatch => (
   UserApiUtil.fetchUser(id).then(user => dispatch(receiveUser(user)))
 );
