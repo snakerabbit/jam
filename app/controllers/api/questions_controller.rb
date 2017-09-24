@@ -16,6 +16,7 @@ class Api::QuestionsController < ApplicationController
       render :show
     else
       render json: []
+    end
   end
 
   private
