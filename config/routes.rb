@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     resource :session
 
     resources :questions, only: [:index, :create, :destroy]
-    resources :answers, only: [:create, :destroy, :show, :index, :update]
+    resources :user_answers, only: [:create, :destroy, :show, :index, :update]
 
   end
   root "static_pages#root"
