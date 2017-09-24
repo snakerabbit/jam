@@ -13,10 +13,11 @@ class SessionForm extends React.Component {
   }
 
   componentWillReceiveProps(newProps){
-    if(newProps.loggedIn) {
-      this.props.history.push('/');
+    if(this.props.formType !== newProps.formType){
+      this.props.clearSessionErrors();
     }
   }
+
 
   handleSubmit(e) {
     e.preventDefault();

@@ -26,14 +26,16 @@ class UserIndex extends React.Component {
 
   instrumentOptions () {
     return(
-      <select defaultValue='Instrument' onChange={this.handleFilter}>
-        <option selected>Instrument</option>
-        <option value='guitar'>Guitarist</option>
-        <option value='bass guitar'>Bass Guitarist</option>
-        <option value='drums'>Drummer</option>
-        <option value='piano'>Keyboardist</option>
-        <option value='voice'>Vocalist</option>
-      </select>
+      <div className = 'search-bar'>
+        <select defaultValue='Instrument' onChange={this.handleFilter}>
+          <option selected>Instrument</option>
+          <option value='guitar'>Guitarist</option>
+          <option value='bass guitar'>Bass Guitarist</option>
+          <option value='drums'>Drummer</option>
+          <option value='piano'>Keyboardist</option>
+          <option value='voice'>Vocalist</option>
+        </select>
+    </div>
     );
   }
 
@@ -59,7 +61,7 @@ class UserIndex extends React.Component {
     }
   }
 
-  
+
   render () {
     return(
       <div className='browse-users'>
