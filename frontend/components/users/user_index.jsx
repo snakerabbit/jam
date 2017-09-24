@@ -9,6 +9,8 @@ class UserIndex extends React.Component {
       instrument:""
     };
     this.handleFilter = this.handleFilter.bind(this);
+    this.instrumentOptions = this.instrumentOptions.bind(this);
+    this.mapUsers = this.mapUsers.bind(this);
   }
 
   componentDidMount(){
@@ -25,7 +27,7 @@ class UserIndex extends React.Component {
   instrumentOptions () {
     return(
       <select defaultValue='Instrument' onChange={this.handleFilter}>
-        <option value=''>Instrument</option>
+        <option selected>Instrument</option>
         <option value='guitar'>Guitarist</option>
         <option value='bass guitar'>Bass Guitarist</option>
         <option value='drums'>Drummer</option>
@@ -34,6 +36,30 @@ class UserIndex extends React.Component {
       </select>
     );
   }
+
+  mapUsers () {
+    const mappedUsers = this.props.users.map(user => (
+      <div key={user.id} className='user-index-item'>
+        <UserIndexItem
+          user={user}/>
+        <br/>
+        <br/>
+      </div>
+    ));
+    if (mappedUsers.length === 0 ){
+      return (
+        <div>
+          <p>NO USERS FOUND</p>
+        </div>
+      );
+    } else {
+      return(
+        mappedUsers
+      );
+    }
+  }
+
+  
   render () {
     return(
       <div className='browse-users'>
@@ -45,16 +71,7 @@ class UserIndex extends React.Component {
           </div>
           <div className = 'user-index'>
           <ul>
-            {
-              this.props.users.map(user => (
-                <div key={user.id} className='user-index-item'>
-                  <UserIndexItem
-                    user={user}/>
-                  <br/>
-                  <br/>
-                </div>
-              ))
-            }
+            {this.mapUsers()};
           </ul>
         </div>
       </div>
