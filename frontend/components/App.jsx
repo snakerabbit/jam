@@ -20,8 +20,12 @@ const App = () =>(
       <br/>
       <AuthRoute path='/login' component={SessionFormContainer}/>
       <AuthRoute path='/signup' component={SessionFormContainer}/>
-      <Route exact path='/' component ={Home}/>
+
       <Route exact path='/' component = {Footer}/>
+      <Switch>
+        <ProtectedRoute path='/' component={UserIndexContainer}/>
+        <Route exact path='/' component ={Home}/>
+      </Switch>
       <Switch>
         <ProtectedRoute path='/users/:userId' component={UserShowContainer}/>
         <ProtectedRoute path='/users' component={UserIndexContainer}/>
