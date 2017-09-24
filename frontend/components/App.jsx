@@ -29,8 +29,6 @@ const App = () =>(
         <ProtectedRoute path='/users/:userId' component={UserShowContainer}/>
         <ProtectedRoute path='/users' component={UserIndexContainer}/>
       </Switch>
-
-
   </div>
 );
 
