@@ -3,6 +3,7 @@ Rails.application.routes.draw do
     resources :users do
       collection do
         get 'filter'
+        get 'search'
       end
     end
     resource :session
