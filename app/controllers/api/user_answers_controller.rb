@@ -8,12 +8,26 @@ class Api::UserAnswersController < ApplicationController
     end
   end
 
-  def show
+  def create
     @user_answer = UserAnswer.new(user_answer_params)
+    @question = @user_answer.question
+    @user_answers = UserAnswer.inclues(:question).where("user_id = ?", user_answer_params[:user_id])
+
+    if @user_answer.save
+      render :index
+    else
+      render json: []
+    end
+
   end
 
-  def create
-
+  def show
+    @user_answer = UserAnswer.find(params[:id])
+    if @user_answer
+      render :show
+    else
+      render json: []
+    end
   end
 
   private
