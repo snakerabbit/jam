@@ -5,17 +5,22 @@ import IndexSearchBar from './index_search_bar';
 class UserIndex extends React.Component {
   constructor(props) {
     super(props);
-    this.state={
-      instrument: ''
+    this.state = {
+      instrument:""
     };
-    this.instrumentOptions = this.instrumentOptions.bind(this);
     this.handleFilter = this.handleFilter.bind(this);
   }
 
   componentDidMount(){
-    this.props.fetchUsers(this.state.instrument);
+  this.props.fetchUsers(this.state.instrument);
+  console.log(this.props.users);
   }
 
+  handleFilter (e) {
+    e.preventDefault();
+    this.props.fetchUsers(e.target.value);
+    this.setState({ instrument: e.target.value });
+  }
 
 
   instrumentOptions () {
@@ -26,20 +31,11 @@ class UserIndex extends React.Component {
         <option value='guitar'>Guitarist</option>
         <option value='bass guitar'>Bass Guitarist</option>
         <option value='drums'>Drummer</option>
-        <option value='keyboard'>Keyboardist</option>
-        <option value=''>All Musicians</option>
+        <option value='piano'>Keyboardist</option>
       </select>
     );
   }
-
-  handleFilter (e) {
-    this.props.fetchUsers(e.currentTarget.value);
-    this.setState({
-      instrument: e.currentTarget.value
-    });
-  }
   render () {
-
     return(
       <div className='browse-users'>
           <div className='index-search-bar'>

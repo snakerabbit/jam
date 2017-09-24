@@ -14,12 +14,17 @@ class Api::UsersController < ApplicationController
   end
 
   def index
-    @users = User.all
+    @users = User.where(instrument: params[:instrument])
+    if @users
+      render :index
+    else
+      render json: @users.errors, status: 422
+    end
   end
 
   private
 
   def user_params
-    params.require(:user).permit(:username, :password)
+    params.require(:user).permit(:username, :password, :instrument)
   end
 end

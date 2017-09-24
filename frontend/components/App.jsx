@@ -6,6 +6,7 @@ import Home from './home/home';
 import NavBarContainer from './navbar/navbar_container';
 import UserIndexContainer from './users/user_index_container';
 import UserShowContainer from './users/user_show_container';
+import Footer from './footer/footer';
 
 const App = () =>(
   <div >
@@ -20,6 +21,7 @@ const App = () =>(
       <AuthRoute path='/login' component={SessionFormContainer}/>
       <AuthRoute path='/signup' component={SessionFormContainer}/>
       <Route exact path='/' component ={Home}/>
+      <Route exact path='/' component = {Footer}/>
       <Switch>
         <ProtectedRoute path='/users/:userId' component={UserShowContainer}/>
         <ProtectedRoute path='/users' component={UserIndexContainer}/>

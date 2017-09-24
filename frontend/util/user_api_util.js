@@ -1,10 +1,16 @@
-export const fetchUsers = instrument => {
-  return(
-    $.ajax({
-      method: 'GET',
-      url: 'api/users',
-    })
-  );
+export const fetchUsers = (instrument) => {
+  return $.ajax({
+    method: "GET",
+    url: "api/users",
+    data: { instrument }
+  });
+};
+
+export const fetchAllUsers = () => {
+  return $.ajax({
+    method: "GET",
+    url: "api/users",
+  });
 };
 
 export const fetchUser = id =>{
