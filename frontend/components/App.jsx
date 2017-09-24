@@ -20,10 +20,9 @@ const App = () =>(
       <br/>
       <AuthRoute path='/login' component={SessionFormContainer}/>
       <AuthRoute path='/signup' component={SessionFormContainer}/>
-
       <Route exact path='/' component = {Footer}/>
       <Switch>
-        <ProtectedRoute path='/' component={UserIndexContainer}/>
+        <ProtectedRoute exact path='/' component={UserIndexContainer}/>
         <Route exact path='/' component ={Home}/>
       </Switch>
       <Switch>
