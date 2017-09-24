@@ -24,6 +24,16 @@ class User < ApplicationRecord
   before_validation :ensure_session_token
   attr_reader :password
 
+  has_many :user_answers
+
+  has_many :questions,
+    through: :user_answers,
+    source: :answers
+
+  has_many :answers,
+    through: :user_answers,
+    source: :questions
+
   def self.find_by_credentials(username, password)
     @user = User.find_by_username(username);
     if @user && @user.is_password?(password)
