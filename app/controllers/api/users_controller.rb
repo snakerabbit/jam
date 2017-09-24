@@ -14,7 +14,7 @@ class Api::UsersController < ApplicationController
   end
 
   def index
-    @users = User.all
+    @users = User.all.where("username != ?", current_user.username)
     if @users
       render :index
     else
@@ -23,7 +23,7 @@ class Api::UsersController < ApplicationController
   end
 
   def filter
-    @users = User.where(instrument: params[:instrument])
+    @users = User.where(instrument: params[:instrument]).where("username != ?", current_user.username)
     if @users
       render :index
     else
