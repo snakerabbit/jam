@@ -1,23 +1,33 @@
 import React from 'react';
+import CSSTransitionGroup from 'react-transition-group/CSSTransitionGroup';
 
 class UserSearch extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      search:""
+      searchValue:""
     };
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleInput = this.handleInput.bind(this);
+    this.selectUsername = this.selectUsername.bind(this);
+    this.matches = this.matches.bind(this);
   }
   componentDidMount () {
-    this.props.fetchUser(this.state.search);
+    this.props.fetchAllUsers();
   }
-  handleChange (e) {
-    this.setState({search: e.target.value});
+  handleInput (e) {
+    this.setState({searchValue: e.target.value});
   }
 
-  handleSubmit (e) {
+  selectUsername (e) {
+    let username = event.target.innerText;
+    this.setState({searchValue: username});
+  }
 
+  matches () {
+    const matches = [];
+    if(this.state.searchValue.length === 0) {
+      return this.props.users.map(user => user.username);
+    }
   }
 
   render () {
