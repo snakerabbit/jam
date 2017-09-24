@@ -4,7 +4,7 @@ import { fetchAllUsers, fetchUser } from '../../actions/user_actions';
 
 const mapStateToProps = state => {
   return({
-    users: Object.values(state.users)
+    user: state.users[state.users.id]
   });
 };
 
