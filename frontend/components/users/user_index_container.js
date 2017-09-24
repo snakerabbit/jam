@@ -10,6 +10,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return({
+    fetchAllUsers: () => dispatch(fetchAllUsers()),
     fetchUsers:(instrument) => dispatch(fetchUsers(instrument)),
     fetchUser: id => dispatch(fetchUser(id))
   });

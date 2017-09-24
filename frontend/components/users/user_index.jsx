@@ -14,13 +14,18 @@ class UserIndex extends React.Component {
   }
 
   componentDidMount(){
-      this.props.fetchUsers(this.state.instrument);
+      this.props.fetchAllUsers();
   }
 
   handleFilter (e) {
     e.preventDefault();
-    this.props.fetchUsers(e.target.value);
-    this.setState({ instrument: e.target.value });
+    if(e.target.value === 'all'){
+      this.props.fetchAllUsers();
+    } else {
+      this.props.fetchUsers(e.target.value);
+      this.setState({ instrument: e.target.value });
+    }
+
   }
 
 
@@ -28,12 +33,13 @@ class UserIndex extends React.Component {
     return(
       <div className = 'search-bar'>
         <select defaultValue='Instrument' onChange={this.handleFilter}>
-          <option selected>Instrument</option>
+          <option selected disabled>Instrument</option>
           <option value='guitar'>Guitarist</option>
           <option value='bass guitar'>Bass Guitarist</option>
           <option value='drums'>Drummer</option>
           <option value='piano'>Keyboardist</option>
           <option value='voice'>Vocalist</option>
+          <option selected value='all'>All Musicians</option>
         </select>
     </div>
     );

@@ -17,12 +17,13 @@ const receiveUser = user =>{
   });
 };
 
-export const fetchUsers = (instrument) => {
-  return (dispatch) => {
-    return UserApiUtil.fetchUsers(instrument)
-      .then((users) => dispatch(receiveAllUsers(users)));
-  };
-};
+export const fetchUsers = instrument => dispatch => (
+    UserApiUtil.fetchUsers(instrument).then(users => dispatch(receiveAllUsers(users)))
+);
+
+export const fetchAllUsers = () => dispatch => (
+  UserApiUtil.fetchAllUsers().then(users => dispatch(receiveAllUsers(users)))
+);
 
 export const fetchUser = id => dispatch => (
   UserApiUtil.fetchUser(id).then(user => dispatch(receiveUser(user)))

@@ -1,7 +1,7 @@
 export const fetchUsers = (instrument) => {
   return $.ajax({
     method: "GET",
-    url: 'api/users/',
+    url: 'api/users/filter',
     data: { instrument }
   });
 };

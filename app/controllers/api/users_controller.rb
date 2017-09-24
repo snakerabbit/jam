@@ -14,6 +14,15 @@ class Api::UsersController < ApplicationController
   end
 
   def index
+    @users = User.all
+    if @users
+      render :index
+    else
+      render json: @users.errors, status: 422
+    end
+  end
+
+  def filter
     @users = User.where(instrument: params[:instrument])
     if @users
       render :index
