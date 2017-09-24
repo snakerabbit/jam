@@ -23,8 +23,7 @@ class Api::UsersController < ApplicationController
   end
 
   def filter
-    @users = User.where(instrument: params[:instrument])
-                 .where("username != ?", current_user.username)
+    @users = User.where(instrument: params[:instrument]).where("username != ?", current_user.username)
     if @users
       render :index
     else
@@ -32,14 +31,6 @@ class Api::UsersController < ApplicationController
     end
   end
 
-  def search
-    @users = User.where(username: params[:username])
-                 .where("username !=?", current_user.username)
-    if @users
-      render :index
-    else
-      render json: @users.errors, status: 422
-  end
 
   private
 
