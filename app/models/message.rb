@@ -15,7 +15,7 @@ class Message < ApplicationRecord
 
   belongs_to :conversation
 
-  belongs_to :author
+  belongs_to :author,
     class_name: :User,
     primary_key: :id,
     foreign_key: :author_id
