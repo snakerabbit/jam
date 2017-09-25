@@ -12,10 +12,9 @@ class SessionForm extends React.Component {
     this.handleGuestLogin = this.handleGuestLogin.bind(this);
   }
 
-  componentWillReceiveProps(newProps){
-    if(this.props.formType !== newProps.formType){
-      this.props.clearSessionErrors();
-    }
+  componentWillMount() {
+    console.log("component mounted");
+    this.props.clearSessionErrors();
   }
 
 
@@ -33,7 +32,7 @@ class SessionForm extends React.Component {
 
 
   handleGuestLogin() {
-      if (this.props.formType == "login") {
+      if (this.props.formType === "login") {
         return (
           <button type="submit"
                   onClick={() => this.setState({username: "guest", password: 'password'})}>Guest Login</button>
@@ -43,7 +42,6 @@ class SessionForm extends React.Component {
 
 
   renderErrors() {
-    console.log(this.props.errors);
     return(
       <ul>
       {this.props.errors.map((error, index) => (
@@ -56,6 +54,7 @@ class SessionForm extends React.Component {
   }
 
   render (){
+    console.log(this.props.formType);
     const text = (this.props.formType === 'login') ? "LOG IN: " : "SIGN UP: ";
     return(
       <div>

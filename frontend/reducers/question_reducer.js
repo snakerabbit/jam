@@ -1,10 +1,6 @@
 import { RECEIVE_QUESTIONS, RECEIVE_QUESTION} from '../actions/question_actions';
 import merge from 'lodash/merge';
 
-const _defaultState = {
-  question: null,
-  questions: {}
-};
 
 const QuestionReducer = (state = {}, action) => {
   Object.freeze(state);
