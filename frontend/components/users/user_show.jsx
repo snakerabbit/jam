@@ -7,7 +7,6 @@ class UserShow extends React.Component {
   }
   componentDidMount() {
     this.props.fetchUser(this.props.match.params.userId);
-    console.log(this.props.user);
 
   }
 

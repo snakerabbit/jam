@@ -6,6 +6,7 @@ import Home from './home/home';
 import NavBarContainer from './navbar/navbar_container';
 import UserIndexContainer from './users/user_index_container';
 import UserShowContainer from './users/user_show_container';
+import QuestionsContainer from './questions/questions_container';
 import Footer from './footer/footer';
 
 const App = () =>(
