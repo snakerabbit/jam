@@ -6,10 +6,9 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 User.destroy_all
+Question.destroy_all
+Answer.destroy_all
 
-q1 = Question.create(body: "Do you like cats? Would you consider owning a cat as a pet?")
-a1 = Answer.create(answer_body: "yes", question_id: q1.id)
-a2 = Answer.create(answer_body: "no", question_id: q1.id)
 
 
 user1 = User.create(username: "Alison",
@@ -53,5 +52,3 @@ user4 = User.create(username: "Bjork",
                    looking_for:"pianist",
                    image_url:"https://vignette.wikia.nocookie.net/4chanmusic/images/0/08/Mai_wiafu.jpg/revision/latest?cb=20151031003036",
                    about_me: "I am an Icelandic Singer")
-
-ua1 = UserAnswer.create(user_id: user4.id, answer_id: a1.id, question_id: q1.id, accepted_choices: [a1.answer_body])
