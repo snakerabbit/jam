@@ -1,17 +1,17 @@
 # == Schema Information
 #
-# Table name: answers
+# Table name: conversations
 #
 #  id          :integer          not null, primary key
-#  body        :string
+#  user_one_id :integer          not null
+#  user_two_id :integer          not null
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
-#  question_id :integer
 #
 
 require 'test_helper'
 
-class AnswerTest < ActiveSupport::TestCase
+class ConversationTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

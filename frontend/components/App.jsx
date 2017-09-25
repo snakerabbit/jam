@@ -30,6 +30,7 @@ const App = () =>(
         <ProtectedRoute path='/users/:userId' component={UserShowContainer}/>
         <ProtectedRoute path='/users' component={UserIndexContainer}/>
       </Switch>
+      <Route path='/users/:userId' component={QuestionsContainer}/>
   </div>
 );
 

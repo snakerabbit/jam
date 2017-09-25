@@ -1,12 +1,13 @@
 # == Schema Information
 #
-# Table name: answers
+# Table name: messages
 #
-#  id          :integer          not null, primary key
-#  body        :string
-#  created_at  :datetime         not null
-#  updated_at  :datetime         not null
-#  question_id :integer
+#  id              :integer          not null, primary key
+#  author_id       :integer          not null
+#  conversation_id :integer          not null
+#  body            :text             not null
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html

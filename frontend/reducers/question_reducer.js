@@ -6,13 +6,13 @@ const _defaultState = {
   questions: {}
 };
 
-const QuestionReducer = (state = _defaultState, action) => {
+const QuestionReducer = (state = {}, action) => {
   Object.freeze(state);
   switch (action.type) {
     case RECEIVE_QUESTIONS:
-      return {questions: action.questions};
+      return action.questions;
     case RECEIVE_QUESTION:
-      return {question: action.question};
+      return action.question;
     default:
       return state;
   }
