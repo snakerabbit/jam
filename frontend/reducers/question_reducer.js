@@ -2,6 +2,7 @@ import { RECEIVE_QUESTIONS, RECEIVE_QUESTION} from '../actions/question_actions'
 import merge from 'lodash/merge';
 
 
+
 const QuestionReducer = (state = {}, action) => {
   Object.freeze(state);
   switch (action.type) {

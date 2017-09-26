@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     end
     resource :session
 
-    resources :questions, only: [:index, :create, :destroy]
+    resources :questions, only: [:index, :show]
     resources :responses, only: [:create, :destroy, :show, :index, :update]
     resources :conversations, only: [:create, :show, :index] do
       resources :messages, only: [:create, :show]
