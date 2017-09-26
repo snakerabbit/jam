@@ -6,7 +6,7 @@
 #  body        :string
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
-#  question_id :integer
+#  question_id :integer          not null
 #
 
 require 'test_helper'

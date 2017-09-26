@@ -13,7 +13,6 @@ class SessionForm extends React.Component {
   }
 
   componentWillMount() {
-    console.log("component mounted");
     this.props.clearSessionErrors();
   }
 

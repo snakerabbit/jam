@@ -11,10 +11,10 @@
 class Question < ApplicationRecord
   validates :body, presence: true
 
-  has_many :user_answers
+  has_many :answers
 
-  has_many :answers,
-    through: :user_answers
-
-
+  has_many :responses,
+  through: :answers,
+  source: :responses
+  
 end
