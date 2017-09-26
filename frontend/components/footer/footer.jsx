@@ -5,7 +5,7 @@ export default () =>{
   return(
     <div className = 'footer'>
       <div className='test'>
-        <a href='' className = 'footer-links'>Github</a>
+        <a href='https://github.com/snakerabbit/jam' className = 'footer-links'>Github</a>
         <a href='' className = 'footer-links'>LinkedIn</a>
         <a href='' className = 'footer-links'>Facebook</a>
       </div>
