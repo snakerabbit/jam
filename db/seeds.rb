@@ -7,6 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 User.destroy_all
 Question.destroy_all
+Answer.destroy_all
 Response.destroy_all
 #
 # user1 = User.create(username: "Alison",
@@ -50,12 +51,43 @@ Response.destroy_all
 #                    looking_for:"pianist",
 #                    image_url:"https://vignette.wikia.nocookie.net/4chanmusic/images/0/08/Mai_wiafu.jpg/revision/latest?cb=20151031003036",
 #                    about_me: "I am an Icelandic Singer")
-question1 = Question.create(body: "What is your favorite color?")
-question2 = Question.create(body: "What is your favorite season?")
-answer1 = Answer.create(body: "blue", question_id: question1.id)
-answer2 = Answer.create(body: "red", question_id: question1.id)
-answer3 = Answer.create(body: "summer", question_id: question2.id)
-answer4 = Answer.create(body: "winter", question_id: question2.id)
+
+question1 = Question.create(body: "Can you read sheet music?")
+question2 = Question.create(body: "How many years of experience do you have?")
+question3 = Question.create(body: "Are you interested in playing live?")
+question4 = Question.create(body: "Are you interested in recording the music you create?")
+question5 = Question.create(body: "Is it a primary goal to be famous?")
+question6 = Question.create(body: "Is it a primary goal to become a professional musician?")
+question7 = Question.create(body: "I'm looking to collaborate:")
+
+
+answer1 = Answer.create(body: "yes", question_id: question1.id)
+answer2 = Answer.create(body: "no", question_id: question1.id)
+
+answer3 = Answer.create(body: "0-1 years", question_id: question2.id)
+answer4 = Answer.create(body: "1-3 years", question_id: question2.id)
+answer5 = Answer.create(body: "3-5 years", question_id: question2.id)
+answer6 = Answer.create(body: "5+ years", question_id: question2.id)
+
+answer7 = Answer.create(body: "yes", question_id: question3.id)
+answer8 = Answer.create(body: "no", question_id: question3.id)
+
+answer9 = Answer.create(body: "yes", question_id: question4.id)
+answer10 = Answer.create(body: "no", question_id: question4.id)
+
+answer11 = Answer.create(body: "yes", question_id: question5.id)
+answer12 = Answer.create(body: "no", question_id: question5.id)
+
+answer13 = Answer.create(body: "yes", question_id: question6.id)
+answer14 = Answer.create(body: "no", question_id: question6.id)
+
+answer15 = Answer.create(body: "daily", question_id: question7.id)
+answer16 = Answer.create(body: "weekly", question_id: question7.id)
+answer16 = Answer.create(body: "monthly", question_id: question7.id)
+answer16 = Answer.create(body: "let's play it by ear", question_id: question7.id)
+answer17 = Answer.create(body: "once", question_id: question7.id)
+
+
 
 user1 = User.create(username: "Thom Yorke",
                     password: "password",
@@ -195,5 +227,72 @@ user13 = User.create(username: "guest",
                      looking_for: "producer",
                      image_url: "http://www.iconsdb.com/icons/preview/gray/guest-xxl.png",
                      )
-response1 = Response.create(answer_id: answer1.id, user_id: user13.id)
-response2 = Response.create(answer_id: answer3.id, user_id: user13.id)
+#thom york responses
+r1 = Response.create(answer_id: answer1.id, user_id: user1.id)
+r2 = Response.create(answer_id: answer3.id, user_id: user1.id)
+r3 = Response.create(answer_id: answer7.id, user_id: user1.id)
+r4 = Response.create(answer_id: answer9.id, user_id: user1.id)
+r5 = Response.create(answer_id: answer11.id, user_id: user1.id)
+r6 = Response.create(answer_id: answer14.id, user_id: user1.id)
+r7 = Response.create(answer_id: answer16.id, user_id: user1.id)
+
+#johnny greenwood responses
+r8 = Response.create(answer_id: answer4.id, user_id: user2.id)
+r9 = Response.create(answer_id: answer8.id, user_id: user2.id)
+r10 = Response.create(answer_id: answer2.id, user_id: user2.id)
+r11 = Response.create(answer_id: answer10.id, user_id: user2.id)
+r12 = Response.create(answer_id: answer14.id, user_id: user2.id)
+
+#ed o'brien responses
+r13 = Response.create(answer_id: answer3.id, user_id: user3.id)
+r14 = Response.create(answer_id: answer7.id, user_id: user3.id)
+r15 = Response.create(answer_id: answer9.id, user_id: user3.id)
+r16 = Response.create(answer_id: answer14.id, user_id: user3.id)
+
+#colin greenwood responses
+r17 = Response.create(answer_id: answer1.id, user_id: user4.id)
+r18 = Response.create(answer_id: answer3.id, user_id: user4.id)
+r19 = Response.create(answer_id: answer7.id, user_id: user4.id)
+r20 = Response.create(answer_id: answer9.id, user_id: user4.id)
+r21 = Response.create(answer_id: answer11.id, user_id: user4.id)
+r22 = Response.create(answer_id: answer14.id, user_id: user4.id)
+r23 = Response.create(answer_id: answer16.id, user_id: user4.id)
+
+#Phil Selway responses
+r24 = Response.create(answer_id: answer3.id, user_id: user5.id)
+r25 = Response.create(answer_id: answer7.id, user_id: user5.id)
+r26 = Response.create(answer_id: answer9.id, user_id: user5.id)
+r27 = Response.create(answer_id: answer14.id, user_id: user5.id)
+
+#James Murphy responses
+r28 = Response.create(answer_id: answer4.id, user_id: user6.id)
+r29 = Response.create(answer_id: answer8.id, user_id: user6.id)
+
+#Nancy Whang responses
+r30 = Response.create(answer_id: answer6.id, user_id: user7.id)
+
+#Typer Pope has no responses
+
+#Al Doyle responses
+r31 = Response.create(answer_id: answer9.id, user_id: user9.id)
+r32 = Response.create(answer_id: answer11.id, user_id: user9.id)
+r33 = Response.create(answer_id: answer14.id, user_id: user9.id)
+
+#RZA responses
+r34 = Response.create(answer_id: answer4.id, user_id: user10.id)
+r35 = Response.create(answer_id: answer8.id, user_id: user10.id)
+r36 = Response.create(answer_id: answer2.id, user_id: user10.id)
+r37 = Response.create(answer_id: answer10.id, user_id: user10.id)
+r38 = Response.create(answer_id: answer14.id, user_id: user10.id)
+
+#GZA responses
+r39 = Response.create(answer_id: answer9.id, user_id: user11.id)
+r40 = Response.create(answer_id: answer11.id, user_id: user11.id)
+r41 = Response.create(answer_id: answer14.id, user_id: user11.id)
+
+#MethodMan responses
+r42 = Response.create(answer_id: answer4.id, user_id: user12.id)
+r43= Response.create(answer_id: answer8.id, user_id: user12.id)
+r44 = Response.create(answer_id: answer2.id, user_id: user12.id)
+
+#guest has no responses
