@@ -6,7 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 User.destroy_all
-#
+Question.destroy_all
+Response.destroy_all
 #
 # user1 = User.create(username: "Alison",
 #                     password: "123321",
@@ -49,6 +50,13 @@ User.destroy_all
 #                    looking_for:"pianist",
 #                    image_url:"https://vignette.wikia.nocookie.net/4chanmusic/images/0/08/Mai_wiafu.jpg/revision/latest?cb=20151031003036",
 #                    about_me: "I am an Icelandic Singer")
+question1 = Question.create(body: "What is your favorite color?")
+question2 = Question.create(body: "What is your favorite season?")
+answer1 = Answer.create(body: "blue", question_id: question1.id)
+answer2 = Answer.create(body: "red", question_id: question1.id)
+answer3 = Answer.create(body: "summer", question_id: question2.id)
+answer4 = Answer.create(body: "winter", question_id: question2.id)
+
 user1 = User.create(username: "Thom Yorke",
                     password: "password",
                     city:"San Francisco",
@@ -187,3 +195,5 @@ user13 = User.create(username: "guest",
                      looking_for: "producer",
                      image_url: "http://www.iconsdb.com/icons/preview/gray/guest-xxl.png",
                      )
+response1 = Response.create(answer_id: answer1.id, user_id: user13.id)
+response2 = Response.create(answer_id: answer3.id, user_id: user13.id)

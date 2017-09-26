@@ -12,7 +12,7 @@ const QuestionReducer = (state = _defaultState, action) => {
     case RECEIVE_QUESTIONS:
       return {questions: action.questions};
     case RECEIVE_CURRENT_QUESTION:
-      return {currentQuestion: action.question}
+      return {currentQuestion: action.question};
     default:
       return state;
   }

@@ -53,7 +53,6 @@ class SessionForm extends React.Component {
   }
 
   render (){
-    console.log(this.props.formType);
     const text = (this.props.formType === 'login') ? "LOG IN: " : "SIGN UP: ";
     return(
       <div>
