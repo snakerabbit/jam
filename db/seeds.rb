@@ -228,71 +228,71 @@ user13 = User.create(username: "guest",
                      image_url: "http://www.iconsdb.com/icons/preview/gray/guest-xxl.png",
                      )
 #thom york responses
-r1 = Response.create(answer_id: answer1.id, user_id: user1.id)
-r2 = Response.create(answer_id: answer3.id, user_id: user1.id)
-r3 = Response.create(answer_id: answer7.id, user_id: user1.id)
-r4 = Response.create(answer_id: answer9.id, user_id: user1.id)
-r5 = Response.create(answer_id: answer11.id, user_id: user1.id)
-r6 = Response.create(answer_id: answer14.id, user_id: user1.id)
-r7 = Response.create(answer_id: answer16.id, user_id: user1.id)
+r1 = Response.create(answer_id: answer1.id, user_id: user1.id, importance: 1, accepted_answers:[1], explanation: "")
+r2 = Response.create(answer_id: answer3.id, user_id: user1.id, importance: 3, accepted_answers:[3], explanation: "")
+r3 = Response.create(answer_id: answer7.id, user_id: user1.id, importance: 9, accepted_answers:[7], explanation: "")
+r4 = Response.create(answer_id: answer9.id, user_id: user1.id, importance: 3, accepted_answers:[9], explanation: "")
+r5 = Response.create(answer_id: answer11.id, user_id: user1.id, importance: 8, accepted_answers:[11], explanation: "")
+r6 = Response.create(answer_id: answer14.id, user_id: user1.id, importance: 3, accepted_answers:[14], explanation: "")
+r7 = Response.create(answer_id: answer16.id, user_id: user1.id, importance: 3, accepted_answers:[16], explanation: "")
 
 #johnny greenwood responses
-r8 = Response.create(answer_id: answer4.id, user_id: user2.id)
-r9 = Response.create(answer_id: answer8.id, user_id: user2.id)
-r10 = Response.create(answer_id: answer2.id, user_id: user2.id)
-r11 = Response.create(answer_id: answer10.id, user_id: user2.id)
-r12 = Response.create(answer_id: answer14.id, user_id: user2.id)
+r8 = Response.create(answer_id: answer4.id, user_id: user2.id, importance: 9, accepted_answers:[4], explanation: "")
+r9 = Response.create(answer_id: answer8.id, user_id: user2.id, importance: 8, accepted_answers:[8], explanation: "")
+r10 = Response.create(answer_id: answer2.id, user_id: user2.id, importance: 3, accepted_answers:[2], explanation: "")
+r11 = Response.create(answer_id: answer10.id, user_id: user2.id, importance: 6, accepted_answers:[10], explanation: "")
+r12 = Response.create(answer_id: answer14.id, user_id: user2.id, importance: 3, accepted_answers:[14], explanation: "")
 
 #ed o'brien responses
-r13 = Response.create(answer_id: answer3.id, user_id: user3.id)
-r14 = Response.create(answer_id: answer7.id, user_id: user3.id)
-r15 = Response.create(answer_id: answer9.id, user_id: user3.id)
-r16 = Response.create(answer_id: answer14.id, user_id: user3.id)
+r13 = Response.create(answer_id: answer3.id, user_id: user3.id, importance: 10, accepted_answers:[3], explanation: "")
+r14 = Response.create(answer_id: answer7.id, user_id: user3.id, importance: 8, accepted_answers:[7], explanation: "")
+r15 = Response.create(answer_id: answer9.id, user_id: user3.id, importance: 4, accepted_answers:[9], explanation: "")
+r16 = Response.create(answer_id: answer14.id, user_id: user3.id, importance: 3, accepted_answers:[14], explanation: "")
 
 #colin greenwood responses
-r17 = Response.create(answer_id: answer1.id, user_id: user4.id)
-r18 = Response.create(answer_id: answer3.id, user_id: user4.id)
-r19 = Response.create(answer_id: answer7.id, user_id: user4.id)
-r20 = Response.create(answer_id: answer9.id, user_id: user4.id)
-r21 = Response.create(answer_id: answer11.id, user_id: user4.id)
-r22 = Response.create(answer_id: answer14.id, user_id: user4.id)
-r23 = Response.create(answer_id: answer16.id, user_id: user4.id)
+r17 = Response.create(answer_id: answer1.id, user_id: user4.id, importance: 3, accepted_answers:[1], explanation: "")
+r18 = Response.create(answer_id: answer3.id, user_id: user4.id, importance: 3, accepted_answers:[3], explanation: "")
+r19 = Response.create(answer_id: answer7.id, user_id: user4.id, importance: 6, accepted_answers:[7], explanation: "")
+r20 = Response.create(answer_id: answer9.id, user_id: user4.id, importance: 5, accepted_answers:[9], explanation: "")
+r21 = Response.create(answer_id: answer11.id, user_id: user4.id, importance: 5, accepted_answers:[11], explanation: "")
+r22 = Response.create(answer_id: answer14.id, user_id: user4.id, importance: 6, accepted_answers:[14], explanation: "")
+r23 = Response.create(answer_id: answer16.id, user_id: user4.id, importance: 7, accepted_answers:[16], explanation: "")
 
 #Phil Selway responses
-r24 = Response.create(answer_id: answer3.id, user_id: user5.id)
-r25 = Response.create(answer_id: answer7.id, user_id: user5.id)
-r26 = Response.create(answer_id: answer9.id, user_id: user5.id)
-r27 = Response.create(answer_id: answer14.id, user_id: user5.id)
+r24 = Response.create(answer_id: answer3.id, user_id: user5.id, importance: 2, accepted_answers:[3], explanation: "")
+r25 = Response.create(answer_id: answer7.id, user_id: user5.id, importance: 3, accepted_answers:[7], explanation: "")
+r26 = Response.create(answer_id: answer9.id, user_id: user5.id, importance: 10, accepted_answers:[9], explanation: "")
+r27 = Response.create(answer_id: answer14.id, user_id: user5.id, importance: 9, accepted_answers:[14], explanation: "")
 
 #James Murphy responses
-r28 = Response.create(answer_id: answer4.id, user_id: user6.id)
-r29 = Response.create(answer_id: answer8.id, user_id: user6.id)
+r28 = Response.create(answer_id: answer4.id, user_id: user6.id, importance: 1, accepted_answers:[4], explanation: "")
+r29 = Response.create(answer_id: answer8.id, user_id: user6.id, importance: 2, accepted_answers:[8], explanation: "")
 
 #Nancy Whang responses
-r30 = Response.create(answer_id: answer6.id, user_id: user7.id)
+r30 = Response.create(answer_id: answer6.id, user_id: user7.id, importance: 8, accepted_answers:[6], explanation: "")
 
 #Typer Pope has no responses
 
 #Al Doyle responses
-r31 = Response.create(answer_id: answer9.id, user_id: user9.id)
-r32 = Response.create(answer_id: answer11.id, user_id: user9.id)
-r33 = Response.create(answer_id: answer14.id, user_id: user9.id)
+r31 = Response.create(answer_id: answer9.id, user_id: user9.id, importance: 6, accepted_answers:[9], explanation: "")
+r32 = Response.create(answer_id: answer11.id, user_id: user9.id, importance: 4, accepted_answers:[11], explanation: "")
+r33 = Response.create(answer_id: answer14.id, user_id: user9.id, importance: 8, accepted_answers:[14], explanation: "")
 
 #RZA responses
-r34 = Response.create(answer_id: answer4.id, user_id: user10.id)
-r35 = Response.create(answer_id: answer8.id, user_id: user10.id)
-r36 = Response.create(answer_id: answer2.id, user_id: user10.id)
-r37 = Response.create(answer_id: answer10.id, user_id: user10.id)
-r38 = Response.create(answer_id: answer14.id, user_id: user10.id)
+r34 = Response.create(answer_id: answer4.id, user_id: user10.id, importance: 1, accepted_answers:[4], explanation: "")
+r35 = Response.create(answer_id: answer8.id, user_id: user10.id, importance: 2, accepted_answers:[8], explanation: "")
+r36 = Response.create(answer_id: answer2.id, user_id: user10.id, importance: 4, accepted_answers:[2], explanation: "")
+r37 = Response.create(answer_id: answer10.id, user_id: user10.id, importance: 6, accepted_answers:[10], explanation: "")
+r38 = Response.create(answer_id: answer14.id, user_id: user10.id, importance: 3, accepted_answers:[14], explanation: "")
 
 #GZA responses
-r39 = Response.create(answer_id: answer9.id, user_id: user11.id)
-r40 = Response.create(answer_id: answer11.id, user_id: user11.id)
-r41 = Response.create(answer_id: answer14.id, user_id: user11.id)
+r39 = Response.create(answer_id: answer9.id, user_id: user11.id, importance: 3, accepted_answers:[9], explanation: "")
+r40 = Response.create(answer_id: answer11.id, user_id: user11.id, importance: 8, accepted_answers:[11], explanation: "")
+r41 = Response.create(answer_id: answer14.id, user_id: user11.id, importance: 3, accepted_answers:[14], explanation: "")
 
 #MethodMan responses
-r42 = Response.create(answer_id: answer4.id, user_id: user12.id)
-r43= Response.create(answer_id: answer8.id, user_id: user12.id)
-r44 = Response.create(answer_id: answer2.id, user_id: user12.id)
+r42 = Response.create(answer_id: answer4.id, user_id: user12.id, importance: 5, accepted_answers:[4], explanation: "")
+r43= Response.create(answer_id: answer8.id, user_id: user12.id, importance: 5, accepted_answers:[8], explanation: "")
+r44 = Response.create(answer_id: answer2.id, user_id: user12.id, importance: 5, accepted_answers:[2], explanation: "")
 
 #guest has no responses
