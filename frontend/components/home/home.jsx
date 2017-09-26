@@ -1,9 +1,7 @@
 import React from 'react';
-
+import { Route, Redirect, Switch, Link, HashRouter } from 'react-router-dom';
 export default () => (
-  <div className="home">
-    <div className="img-frame">
-      <h1></h1>
-    </div>
+  <div>
+    
   </div>
 );

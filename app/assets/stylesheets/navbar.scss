@@ -1,11 +1,14 @@
 .nav-bar {
   width: 100%;
-  background-color: black;
+  // background-color: black;
   display: block;
   color: white;
   height: 75px;
-  opacity: 0.6;
+  // opacity: 0.6;
   position: fixed;
+  border-bottom-style:solid;
+  border-bottom-color: white;
+  border-bottom-width: 1px;
 }
 
 .navbar-logged-out {
@@ -50,4 +53,6 @@
 .logo {
   height: 55px;
   width: 55px;
+  opacity: 0.7;
+  padding-top: 10px;
 }

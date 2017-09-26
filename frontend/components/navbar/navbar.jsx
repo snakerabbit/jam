@@ -8,26 +8,26 @@ export default ({currentUser, logout}) =>{
   (
     <div className='navbar-logged-in'>
       <a onClick={logout}>
-        <h2>Log Out</h2>
+        <p>Log Out</p>
       </a>
       <Link to='/users'>
-        <h2>Browse</h2>
+        <p>Browse</p>
       </Link>
       <Link to={`/users/${currentUser.id}`}>
-        <h2>{currentUser.username}</h2>
+        <p>{currentUser.username}</p>
       </Link>
     </div>
   ) : (
     <div className = 'navbar-logged-out'>
       <Link to='/login'>
-        <h2>
+        <p>
           Log In
-        </h2>
+        </p>
       </Link>
       <Link to='/signup'>
-        <h2>
+        <p>
           Sign Up
-        </h2>
+        </p>
       </Link>
     </div>
   );

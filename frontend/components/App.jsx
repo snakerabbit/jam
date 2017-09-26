@@ -11,9 +11,7 @@ import Footer from './footer/footer';
 
 const App = () =>(
   <div >
-    <div>
       <NavBarContainer/>
-    </div>
       <br/>
       <br/>
       <br/>
