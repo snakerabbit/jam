@@ -34,6 +34,6 @@ class Api::ResponsesController < ApplicationController
                                      :user_id,
                                      :importance,
                                      :explanation,
-                                     :accepted_answers = [])
+                                     accepted_answers: [])
   end
 end
