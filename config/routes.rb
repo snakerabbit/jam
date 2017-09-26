@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     resource :session
 
     resources :questions, only: [:index, :create, :destroy]
-    resources :user_answers, only: [:create, :destroy, :show, :index, :update]
+    resources :responses, only: [:create, :destroy, :show, :index, :update]
     resources :conversations, only: [:create, :show, :index] do
       resources :messages, only: [:create, :show]
     end
