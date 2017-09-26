@@ -7,7 +7,7 @@ import { withRouter} from 'react-router-dom';
 const mapStateToProps = (state, ownProps) => {
   return({
     currentUser: state.session.currentUser,
-    currentProfile: state.users[ownProps.match.params.userId],
+    currentProfile: ownProps.match.params.userId,
     questions: state.questions.questions,
     responses: state.responses.responses
   });

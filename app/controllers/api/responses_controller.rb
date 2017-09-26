@@ -12,6 +12,7 @@ class Api::ResponsesController < ApplicationController
 
   def show
     @response = Response.find(params[:id])
+    @responses = Response.includes(:question).where("user_id = ?", response_params[:user_id])
     if @response
       render :show
     else
@@ -20,8 +21,7 @@ class Api::ResponsesController < ApplicationController
   end
 
   def index
-    @responses = Response.includes(:question)
-                         .where("user_id = ?", current_user.id)
+    @responses = Response.includes(:question).where("user_id = ?", response_params[:user_id])
     if @responses
       render :index
     else

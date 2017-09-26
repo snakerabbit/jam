@@ -25,14 +25,14 @@ class User < ApplicationRecord
   before_validation :ensure_session_token
   attr_reader :password
 
-  has_many :user_answers
+  has_many :responses
 
   has_many :questions,
-    through: :user_answers,
+    through: :responses,
     source: :answers
 
   has_many :answers,
-    through: :user_answers,
+    through: :responses,
     source: :questions
 
   def self.find_by_credentials(username, password)

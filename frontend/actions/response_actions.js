@@ -16,8 +16,8 @@ const receiveResponse = response => {
   };
 };
 
-export const fetchResponses = userId => dispatch => (
-  ResponseApiUtil.fetchResponses(userId)
+export const fetchResponses = user_id => dispatch => (
+  ResponseApiUtil.fetchResponses(user_id)
                  .then(responses => dispatch(receiveResponses(responses)))
 );
 

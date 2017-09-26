@@ -11,11 +11,10 @@ class Questions extends React.Component {
 
   componentDidMount(){
     this.props.fetchQuestions();
-    this.props.fetchResponses();
+    this.props.fetchResponses(this.props.currentProfile);
   }
 
   answeredQuestions () {
-
     if(Object.keys(this.props.responses).length !== 0) {
       return Object.keys(this.props.responses).map(response => {
         return this.props.responses[response].question;
