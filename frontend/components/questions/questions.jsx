@@ -41,27 +41,29 @@ class Questions extends React.Component {
         }
       });
       return(
-        <div key={question.id}>
+        <div key={question.id} className='individual-questions'>
           <p>{question.body}</p>
           {answerDisplay}
         </div>
       );
     });
     return(
-      <div>{answeredQuestions}</div>
+      <div className='answered-display'>
+        {answeredQuestions}
+      </div>
     );
   }
 
   render() {
     if(Object.keys(this.props.questions).length === 0 || Object.keys(this.props.responses).length === 0) {
       return(
-        <div>
+        <div className='answered-questions'>
           <h3>No Questions Answered</h3>
         </div>
       );
     } else {
       return(
-        <div>
+        <div className='answered-questions'>
           {this.answeredQuestionsDisplay()}
         </div>
       );

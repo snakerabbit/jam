@@ -1,3 +1,18 @@
 // Place all the styles related to the Api::Questions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.answered-questions {
+  background-color:black;
+  opacity: 0.8;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.answered-display {
+  width: 50%;
+  margin: 0 auto;
+}
+.individual-questions {
+  border-style: solid;
+  border-width:1px;
+}
