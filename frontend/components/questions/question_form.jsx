@@ -49,6 +49,7 @@ class QuestionForm extends React.Component {
           explanation: ""
         })
       );
+    window.location.reload();
   }
 
   handleAnswer(e) {
