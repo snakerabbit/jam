@@ -8,6 +8,7 @@ import UserIndexContainer from './users/user_index_container';
 import UserShowContainer from './users/user_show_container';
 import QuestionsContainer from './questions/questions_container';
 import Footer from './footer/footer';
+import QuestionFormContainer from './questions/question_form_container';
 
 const App = () =>(
   <div >
@@ -29,7 +30,9 @@ const App = () =>(
         <ProtectedRoute path='/users/:userId' component={UserShowContainer}/>
         <ProtectedRoute path='/users' component={UserIndexContainer}/>
       </Switch>
+      <Route path='/users/:userId' component={QuestionFormContainer}/>
       <Route path='/users/:userId' component={QuestionsContainer}/>
+
   </div>
 );
 

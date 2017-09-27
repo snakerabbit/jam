@@ -6,7 +6,8 @@ import { createResponse } from '../../actions/response_actions';
 const mapStateToProps = state => {
   return({
     currentUser: state.session.currentUser,
-    responses: state.responses.responses
+    responses: state.responses.responses,
+    questions: state.questions.questions
   });
 };
 
