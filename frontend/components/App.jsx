@@ -9,6 +9,8 @@ import UserShowContainer from './users/user_show_container';
 import QuestionsContainer from './questions/questions_container';
 import Footer from './footer/footer';
 import QuestionFormContainer from './questions/question_form_container';
+import TabsContainer from './tabs/tabs';
+import ProfileContainer from './profile/profile_container';
 
 const App = () =>(
   <div >
@@ -27,12 +29,9 @@ const App = () =>(
         <Route exact path='/' component ={Home}/>
       </Switch>
       <Switch>
-        <ProtectedRoute path='/users/:userId' component={UserShowContainer}/>
+        <ProtectedRoute path='/users/:userId' component={ProfileContainer}/>
         <ProtectedRoute path='/users' component={UserIndexContainer}/>
       </Switch>
-      <Route path='/users/:userId' component={QuestionFormContainer}/>
-      <Route path='/users/:userId' component={QuestionsContainer}/>
-
   </div>
 );
 
