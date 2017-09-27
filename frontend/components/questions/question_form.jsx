@@ -116,6 +116,7 @@ class QuestionForm extends React.Component {
             onClick={ this.handleAnswer }
             />
           {answer.body}
+          <br/>
         </label>
       ]);
     });
@@ -169,6 +170,7 @@ class QuestionForm extends React.Component {
               <div className="importance-bar"></div>
               A little
           </label>
+          <br/>
           <label className="importance-answer" htmlFor="importance-answer-2" >
               <input
                 id="importance-answer-2"
@@ -181,6 +183,7 @@ class QuestionForm extends React.Component {
               <div className="importance-bar"></div>
               Somewhat
           </label>
+          <br/>
           <label className="importance-answer" htmlFor="importance-answer-3" >
               <input
                 id="importance-answer-3"
@@ -193,6 +196,7 @@ class QuestionForm extends React.Component {
               <div className="importance-bar"></div>
               Very
           </label>
+          <br/>
         </div>
       </div>
     );

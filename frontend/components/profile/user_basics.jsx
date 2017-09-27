@@ -28,7 +28,7 @@ class UserBasics extends React.Component {
             <h2>City: {user.city}</h2>
             <h2>Instrument: {user.instrument}</h2>
             <h2>Looking For: {user.looking_for}</h2>
-            <Link to='/users'>Back To Browse</Link>>
+            <Link to='/users'>Back To Browse</Link>
           </ul>
         </div>
       </div>

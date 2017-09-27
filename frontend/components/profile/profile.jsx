@@ -59,7 +59,7 @@ class Profile extends React.Component {
           <button className='tab-buttons' id='about'onClick={this.handleClick} value="aboutme">About Me</button>
           <button className='tab-buttons' id='quest'onClick={this.handleClick} value="questions">Questions</button>
         </div>
-        <div>
+        <div className='render-tab'>
           {this.renderTab()}
         </div>
       </div>

@@ -1,5 +1,6 @@
 import React from 'react';
 import {withRouter} from 'react-router-dom';
+import QuestionFormContainer from './question_form_container';
 
 class Questions extends React.Component {
   constructor(props) {
@@ -7,6 +8,7 @@ class Questions extends React.Component {
     this.answeredQuestions = this.answeredQuestions.bind(this);
     this.responseIds = this.responseIds.bind(this);
     this.answeredQuestionsDisplay = this.answeredQuestionsDisplay.bind(this);
+    this.renderQuestionForm = this.renderQuestionForm.bind(this);
   }
 
   componentDidMount(){
@@ -54,16 +56,31 @@ class Questions extends React.Component {
     );
   }
 
+  renderQuestionForm(){
+    if(this.props.currentUser.id === parseInt(this.props.currentProfile)){
+      return(
+        <div>
+          <div className='answer-questions-header'>
+            <p>Answer Questions: </p>
+          </div>
+          <QuestionFormContainer/>
+        </div>
+      );
+    }
+  }
+
   render() {
     if(Object.keys(this.props.questions).length === 0 || Object.keys(this.props.responses).length === 0) {
       return(
         <div className='answered-questions'>
+          {this.renderQuestionForm()}
           <h3>No Questions Answered</h3>
         </div>
       );
     } else {
       return(
         <div className='answered-questions'>
+          {this.renderQuestionForm()}
           {this.answeredQuestionsDisplay()}
         </div>
       );
