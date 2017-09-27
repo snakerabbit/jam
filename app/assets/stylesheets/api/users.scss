@@ -11,6 +11,8 @@
   width: 90%;
   margin: 0 auto;
   padding-top: 20px;
+  padding-bottom: 20px;
+  margin-bottom: 25px;
 }
 
 .user-profile > ul {
@@ -123,4 +125,33 @@ a:hover{
 .browse-users {
   justify-content: space-between;
   flex-direction: column;
+}
+
+.profile-tabs-buttons {
+  width: 90%;
+  margin: 0 auto;
+}
+.tab-buttons {
+  -webkit-appearance: none;
+  background:none;
+  color: white;
+  border: none;
+  font-size: 22px;
+  background-color: black;
+  opacity: 0.7;
+  margin-right:2px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.about-me-h3 {
+  margin: 0;
+}
+
+ul {
+  margin: 0;
+}
+#about {
+  border-right-color: white;
+
 }

@@ -56,8 +56,8 @@ class Profile extends React.Component {
       <div>
         <UserBasicsContainer/>
         <div className = 'profile-tabs-buttons'>
-          <button onClick={this.handleClick} value="aboutme">About Me</button>
-          <button onClick={this.handleClick} value="questions">Questions</button>
+          <button className='tab-buttons' id='about'onClick={this.handleClick} value="aboutme">About Me</button>
+          <button className='tab-buttons' id='quest'onClick={this.handleClick} value="questions">Questions</button>
         </div>
         <div>
           {this.renderTab()}

@@ -23,13 +23,13 @@ class AboutMe extends React.Component {
       <div>
         <div className = 'about-me'>
           <ul>
-            <h1>About Me: </h1>
+            <h1 className='about-me-h3'>About Me: </h1>
             <p>{user.about_me}</p>
-            <h1>Favorite Bands: </h1>
+            <h1 className='about-me-h3'>Favorite Bands: </h1>
             <p>{user.fave_bands}</p>
-            <h1>Favorite Genres: </h1>
+            <h1 className='about-me-h3'>Favorite Genres: </h1>
             <p>{user.fave_genres}</p>
-            <h1>Why I'm Here: </h1>
+            <h1 className='about-me-h3'>Why I'm Here: </h1>
             <p>{user.purpose}</p>
           </ul>
         </div>
