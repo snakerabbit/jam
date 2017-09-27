@@ -29,11 +29,11 @@ class User < ApplicationRecord
 
   has_many :questions,
     through: :responses,
-    source: :answers
+    source: :answer
 
   has_many :answers,
     through: :responses,
-    source: :questions
+    source: :question
 
   def self.find_by_credentials(username, password)
     @user = User.find_by_username(username);
