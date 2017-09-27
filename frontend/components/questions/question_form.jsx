@@ -105,7 +105,6 @@ class QuestionForm extends React.Component {
     const answers = this.questionStack()[0].answers.map((answer) => {
       return ([
         <label
-          htmlFor={"radio-answer-" + answer.id}
           key={answer.id}
           className="radio-answer" >
           <input
@@ -137,6 +136,7 @@ class QuestionForm extends React.Component {
             onClick={ this.handleAcceptable }
             />
           {answer.body}
+          <br/>
         </label>
       );
     });
@@ -154,46 +154,38 @@ class QuestionForm extends React.Component {
   renderImportance() {
     return(
       <div className="user-importance">
-        <div className="importance">
-          <p>Importance</p>
-        </div>
-        <div className="importance-radios group">
-          <label className="importance-answer" htmlFor="importance-answer-1" >
+        <p>Importance</p>
+        <div>
+          <label className="importance-answer" >
               <input
-                id="importance-answer-1"
                 name="importance-answer"
                 value={ 1 }
                 type="radio"
                 checked={ this.state.importance == 1 }
                 onClick={ this.handleImportance }
                 />
-              <div className="importance-bar"></div>
               A little
           </label>
           <br/>
-          <label className="importance-answer" htmlFor="importance-answer-2" >
+          <label className="importance-answer" >
               <input
-                id="importance-answer-2"
                 name="importance-answer"
                 value={ 5 }
                 type="radio"
                 checked={ this.state.importance == 5 }
                 onClick={ this.handleImportance }
                 />
-              <div className="importance-bar"></div>
               Somewhat
           </label>
           <br/>
-          <label className="importance-answer" htmlFor="importance-answer-3" >
+          <label className="importance-answer">
               <input
-                id="importance-answer-3"
                 name="importance-answer"
                 value={ 10 }
                 type="radio"
                 checked={ this.state.importance == 10 }
                 onClick={ this.handleImportance }
                 />
-              <div className="importance-bar"></div>
               Very
           </label>
           <br/>
