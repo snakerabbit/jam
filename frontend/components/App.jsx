@@ -34,8 +34,12 @@ const App = () =>(
         <ProtectedRoute path='/users/:userId' component={ProfileContainer}/>
         <ProtectedRoute path='/users' component={UserIndexContainer}/>
       </Switch>
-      <Route exact path='/conversations' component={ConversationsContainer}/>
-      <Route exact path='/conversations/:conversationsId' component={MessagesContainer}/>
+      <Switch>
+        <ProtectedRoute path='/conversations/:conversationsId' component={MessagesContainer}/>
+        <ProtectedRoute path='/conversations' component={ConversationsContainer}/>
+      </Switch>
+
+
   </div>
 );
 
