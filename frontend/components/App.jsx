@@ -9,7 +9,6 @@ import UserShowContainer from './users/user_show_container';
 import QuestionsContainer from './questions/questions_container';
 import Footer from './footer/footer';
 import QuestionFormContainer from './questions/question_form_container';
-import TabsContainer from './tabs/tabs';
 import ProfileContainer from './profile/profile_container';
 import ConversationsContainer from './conversations/conversations_container';
 import MessagesContainer from './conversations/messages_container';
