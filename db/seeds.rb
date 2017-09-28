@@ -9,6 +9,8 @@ User.destroy_all
 Question.destroy_all
 Answer.destroy_all
 Response.destroy_all
+Conversation.destroy_all
+Message.destroy_all
 #
 # user1 = User.create(username: "Alison",
 #                     password: "123321",
@@ -294,5 +296,12 @@ r41 = Response.create(answer_id: answer14.id, user_id: user11.id, importance: 10
 r42 = Response.create(answer_id: answer4.id, user_id: user12.id, importance: 1, accepted_answers:[4], explanation: "")
 r43= Response.create(answer_id: answer8.id, user_id: user12.id, importance: 5, accepted_answers:[8], explanation: "")
 r44 = Response.create(answer_id: answer2.id, user_id: user12.id, importance: 10, accepted_answers:[2], explanation: "")
+#Guest Conversation With Thom Yorke
+c1 = Conversation.create(user_one_id: user1.id, user_two_id: user13.id )
+#RZA Conversation with Guest
+c2 = Conversation.create(user_one_id: user13.id, user_two_id: user10.id)
 
-#guest has no responses
+m1 = Message.create(author_id: user1.id, conversation_id: c1.id, body: "hey")
+m1 = Message.create(author_id: user1.id, conversation_id: c1.id, body: "how are you?")
+m1 = Message.create(author_id: user13.id, conversation_id: c1.id, body: "good! let's jam")
+m1 = Message.create(author_id: user13.id, conversation_id: c2.id, body: "do you remember me?")
