@@ -2,7 +2,7 @@ import React from 'react';
 import {withRouter} from 'react-router-dom';
 import ReactDOM from 'react-dom';
 
-class Message extends React.Component{
+class Messages extends React.Component{
   constructor(props){
     super(props);
     this.state={
@@ -10,18 +10,18 @@ class Message extends React.Component{
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.displayMessages = this.displayMessage.bind(this);
+    this.displayMessages = this.displayMessages.bind(this);
     this.messageForm = this.messageForm.bind(this);
   }
 
   componentDidMount(){
-    this.props.fetchConversation(this.props.params.conversationId)
+    this.props.fetchConversation(this.props.params.conversationId);
   }
 
   handleChange(e){
     this.setState({
       messageText: e.currentTarget.value
-    })
+    });
   }
 
   handleSubmit(e){
@@ -30,7 +30,7 @@ class Message extends React.Component{
     const newMessage = {
       conversation_id: this.props.conversation.conversationId,
       body: this.state.messageText
-    }
+    };
 
     this.props.createMessage(newMessage)
     .then(() => {
@@ -39,7 +39,16 @@ class Message extends React.Component{
   }
 
   messageForm(){
-    
+    return(
+      <form onSubmit={this.handleSubmit}>
+        <input type='text'
+               value={this.state.messageText}
+               onChange={this.handleChange}
+               placeholder="Tell me what you\'re thinking"
+               />
+        <input type='submit' value="Send"/>
+      </form>
+    );
   }
 
   displayMessages() {
@@ -63,12 +72,14 @@ class Message extends React.Component{
   }
 
 
-
-
-
   render(){
     return(
-
-    )
+      <div>
+        <h3>MESSAGES YEAH</h3>
+        {this.messageForm()}
+      </div>
+    );
   }
 }
+
+export default Messages;

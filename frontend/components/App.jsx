@@ -12,6 +12,7 @@ import QuestionFormContainer from './questions/question_form_container';
 import TabsContainer from './tabs/tabs';
 import ProfileContainer from './profile/profile_container';
 import ConversationsContainer from './conversations/conversations_container';
+import MessagesContainer from './conversations/messages_container';
 
 const App = () =>(
   <div >
@@ -33,7 +34,8 @@ const App = () =>(
         <ProtectedRoute path='/users/:userId' component={ProfileContainer}/>
         <ProtectedRoute path='/users' component={UserIndexContainer}/>
       </Switch>
-      <Route path='/conversations' component={ConversationsContainer}/>
+      <Route exact path='/conversations' component={ConversationsContainer}/>
+      <Route exact path='/conversations/:conversationsId' component={MessagesContainer}/>
   </div>
 );
 

@@ -20,7 +20,7 @@ class ChatBox extends React.Component {
       if(!this.props.conversation.latest_message){
         return(
           <div>
-            <Link to={`/conversations/${this.props.conversation.id}`}>
+            <Link to={`/conversations/${this.props.conversationId}`}>
               <h3>{this.otherUser()}</h3>
               <p></p>
             </Link>
@@ -30,7 +30,7 @@ class ChatBox extends React.Component {
       } else {
         return(
           <div>
-            <Link to={`/conversations/${this.props.conversation.id}`}>
+            <Link to={`/conversations/${this.props.conversationId}`}>
               <h3>{this.otherUser()}</h3>
               <p>{this.props.conversation.latest_message.body}</p>
               <p>{this.props.conversation.latest_message.created_at}</p>
