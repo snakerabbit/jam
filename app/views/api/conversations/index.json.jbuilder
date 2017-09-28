@@ -1,3 +1,5 @@
+json.order @conversations.map(&:id)
+
 @conversations.each do |conversation|
   json.set! conversation.id do
     json.user_one conversation.user_one
