@@ -16,6 +16,10 @@ export default ({currentUser, logout}) =>{
       <Link to={`/users/${currentUser.id}`}>
         <p>{currentUser.username}</p>
       </Link>
+      <a>
+        <img className='message-icon'
+          src='http://wfarm1.dataknet.com/static/resources/icons/set92/9ae48e59.png'/>
+      </a>
     </div>
   ) : (
     <div className = 'navbar-logged-out'>
