@@ -1,4 +1,5 @@
 import React from 'react';
+import ChatBox from './chatbox';
 
 class Conversations extends React.Component {
   constructor(props){

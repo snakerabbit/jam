@@ -6,7 +6,7 @@ const _defaultState = {
   conversations: {}
 };
 
-const ConversationsReducer = (state, action) =>{
+const ConversationsReducer = (state = _defaultState, action) =>{
   Object.freeze(state);
   switch (action.type) {
     case RECEIVE_CONVERSATIONS:
