@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import AboutMeContainer from './aboutme_container';
 import UserBasicsContainer from './user_basics_container';
 import QuestionFormContainer from '../questions/questions_container';
+import TabsContainer from '../conversations/tabs_container';
 
 class Profile extends React.Component {
   constructor(props) {
@@ -59,8 +60,8 @@ class Profile extends React.Component {
           <button className='tab-buttons' id='about'onClick={this.handleClick} value="aboutme">About Me</button>
           <button className='tab-buttons' id='quest'onClick={this.handleClick} value="questions">Questions</button>
         </div>
-        <div className='render-tab'>
-          {this.renderTab()}
+        <div>
+          <TabsContainer/>
         </div>
       </div>
 

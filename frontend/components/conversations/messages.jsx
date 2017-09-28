@@ -12,10 +12,31 @@ class Messages extends React.Component{
     this.handleSubmit = this.handleSubmit.bind(this);
     this.displayMessages = this.displayMessages.bind(this);
     this.messageForm = this.messageForm.bind(this);
+    this.otherUserName = this.otherUserName.bind(this);
+    console.log(this.state);
   }
 
   componentDidMount(){
-    this.props.fetchConversation(this.props.params.conversationId);
+  }
+
+  otherUserName(){
+    if (!this.props.currentUser) {
+      return null;
+    } else if (this.props.currentUser.id === this.props.conversation.user_two.id) {
+      return this.props.conversation.user_one.username;
+    } else {
+      return this.props.conversation.user_two.username;
+    }
+  }
+
+  otherUserId(){
+    if (!this.props.currentUser) {
+      return null;
+    } else if (this.props.currentUser.id === this.props.conversation.user_two.id) {
+      return this.props.conversation.user_one.id;
+    } else {
+      return this.props.conversation.user_two.id;
+    }
   }
 
   handleChange(e){
@@ -28,7 +49,6 @@ class Messages extends React.Component{
     e.preventDefault();
 
     const newMessage = {
-      conversation_id: this.props.conversation.conversationId,
       body: this.state.messageText
     };
 

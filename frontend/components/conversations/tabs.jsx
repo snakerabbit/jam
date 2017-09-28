@@ -21,16 +21,17 @@ class Tabs extends React.Component {
       this.props.tabLabels.map((tab, idx) =>{
         if(this.state.selectedTabIdx === idx){
           return(
-            <li key={idx}
+            <li className='individual-tab' key={idx}
                 onClick={()=> this.handleClick(idx)}>
-              <p>{tab}</p>
+              <p className='tab-text'>{tab}</p>
             </li>
           );
         } else {
           return(
-            <li key={idx}
+            <li className='individual-tab'
+              key={idx}
                 onClick={() => this.handleClick(idx)}>
-                <p>{tab}</p>
+                <p className='tab-text'>{tab}</p>
             </li>
           );
         }
@@ -40,13 +41,13 @@ class Tabs extends React.Component {
 
   render(){
     return(
-      <div>
-        <div>
-          <ul>
+      <div className='tabs-container'>
+        <div className='tab-labels'>
+          <ul className='tab-name'>
             {this.tabArray()}
           </ul>
         </div>
-        <div>
+        <div className='tabs'>
             {this.props.tabs[this.state.selectedTabIdx]}
         </div>
       </div>
