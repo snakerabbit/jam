@@ -12,8 +12,7 @@
 class Conversation < ApplicationRecord
   validates :user_one_id, :user_two_id, presence: true
 
-  has_many :messages,
-  -> {order "created_at ASC"}
+  has_many :messages
 
   belongs_to :user_one,
     class_name: 'User',

@@ -1,7 +1,6 @@
 import React from 'react';
 import {withRouter} from 'react-router-dom';
 import QuestionFormContainer from './question_form_container';
-// import QuestionEditContainer from './question_edit_container';
 
 class Questions extends React.Component {
   constructor(props) {
@@ -50,8 +49,7 @@ class Questions extends React.Component {
           <div key={question.id} className='individual-questions'>
             <p>{question.body}
               <button className='edit-button'
-                      value={question.id}
-                      onClick={this.handleEdit}>
+                      value={question.id}>
                 <img className='edit-icon'
                   src='https://www.materialui.co/materialIcons/editor/mode_edit_white_192x192.png'/>
               </button>
