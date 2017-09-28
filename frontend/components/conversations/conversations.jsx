@@ -2,7 +2,7 @@ import React from 'react';
 import ChatBox from './chatbox';
 import TabsContainer from './tabs_container';
 
-class Conversations extends React.Component {
+class Conversation extends React.Component {
   constructor(props){
     super(props);
     this.received = this.received.bind(this);
@@ -11,10 +11,10 @@ class Conversations extends React.Component {
 
   componentDidMount(){
     this.props.fetchConversations();
-    console.log(this.props.conversations);
   }
 
   received(){
+
     const convoOrder = this.props.conversations.order;
     return(
       convoOrder.map(conversation => {
@@ -71,4 +71,4 @@ class Conversations extends React.Component {
 
 }
 
-export default Conversations;
+export default Conversation;

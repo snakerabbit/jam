@@ -20,9 +20,9 @@ class Api::ConversationsController < ApplicationController
   def index
     @conversations = Conversation
                     .includes(:messages)
-                    .includes(:user_one_id)
-                    .includes(:user_two_id)
-                    .where("user_one_id = ? OR user_two_id = ?", current_user.id)
+                    .includes(:user_one)
+                    .includes(:user_two)
+                    .where("user_one_id = ? OR user_two_id = ?", current_user.id, current_user.id)
                     .order(updated_at: :desc)
     render :index
   end

@@ -11,6 +11,7 @@ class Message extends React.Component{
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.displayMessages = this.displayMessage.bind(this);
+    this.messageForm = this.messageForm.bind(this);
   }
 
   componentDidMount(){
@@ -37,6 +38,10 @@ class Message extends React.Component{
     });
   }
 
+  messageForm(){
+    
+  }
+
   displayMessages() {
   if (!this.props.conversation.messages) {
     return (
@@ -56,7 +61,7 @@ class Message extends React.Component{
     );
     }
   }
-  
+
 
 
 

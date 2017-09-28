@@ -3,6 +3,7 @@ export const RECEIVE_CONVERSATIONS = "RECEIVE_CONVERSATIONS";
 export const RECEIVE_CONVERSATION = "RECEIVE_CONVERSATION";
 
 const receiveConversations = conversations =>{
+  console.log(conversations);
   return{
     type: RECEIVE_CONVERSATIONS,
     conversations

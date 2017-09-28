@@ -3,7 +3,6 @@ import { RECEIVE_CONVERSATIONS, RECEIVE_CONVERSATION} from '../actions/conversat
 
 const _defaultState = {
   currentConversation: null,
-  conversations: {}
 };
 
 const ConversationsReducer = (state = _defaultState, action) =>{

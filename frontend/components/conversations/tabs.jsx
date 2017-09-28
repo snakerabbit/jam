@@ -6,26 +6,36 @@ class Tabs extends React.Component {
     this.state = {
       selectedTabIdx: 0
     };
+    this.handleClick = this.handleClick.bind(this);
+    this.tabArray = this.tabArray.bind(this);
+  }
+
+  handleClick(idx){
+    this.setState({
+      selectedTabIdx:idx
+    });
   }
 
   tabArray(){
-    this.props.tabLabels.map((tab, idx) =>{
-      if(this.state.selectedTabIdx === idx){
-        return(
-          <li key={idx}
-              onClick={()=> this.handleClick(idx)}>
-            {tab}
-          </li>
-        );
-      } else {
-        return(
-          <li key={idx}
-              onClick={() => this.handleClick(idx)}>
+    return(
+      this.props.tabLabels.map((tab, idx) =>{
+        if(this.state.selectedTabIdx === idx){
+          return(
+            <li key={idx}
+                onClick={()=> this.handleClick(idx)}>
               <p>{tab}</p>
-          </li>
-        );
+            </li>
+          );
+        } else {
+          return(
+            <li key={idx}
+                onClick={() => this.handleClick(idx)}>
+                <p>{tab}</p>
+            </li>
+          );
+        }
       }
-    });
+    ));
   }
 
   render(){

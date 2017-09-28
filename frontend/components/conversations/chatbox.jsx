@@ -9,9 +9,9 @@ class ChatBox extends React.Component {
 
   otherUser(){
     if(this.props.currentUser.id === this.props.conversation.user_one_id){
-      return this.props.conversation.user_two;
+      return this.props.conversation.user_two.username;
     } else {
-      return this.props.conversation.user_one;
+      return this.props.conversation.user_one.username;
     }
   }
 
@@ -19,18 +19,24 @@ class ChatBox extends React.Component {
   render(){
       if(!this.props.conversation.latest_message){
         return(
-          <Link to={`/conversations/${this.props.conversation.id}`}>
-            <h3>{this.otherUser()}</h3>
-            <p></p>
-          </Link>
+          <div>
+            <Link to={`/conversations/${this.props.conversation.id}`}>
+              <h3>{this.otherUser()}</h3>
+              <p></p>
+            </Link>
+          </div>
+
         );
       } else {
         return(
-          <Link to={`/conversations/${this.props.conversation.id}`}>
-            <h3>{this.otherUser()}</h3>
-            <p>{this.props.converation.latest_message.body}</p>
-            <p>{this.props.conversation.latest_message.created_at}</p>
-          </Link>
+          <div>
+            <Link to={`/conversations/${this.props.conversation.id}`}>
+              <h3>{this.otherUser()}</h3>
+              <p>{this.props.conversation.latest_message.body}</p>
+              <p>{this.props.conversation.latest_message.created_at}</p>
+            </Link>
+          </div>
+
         );
       }
 

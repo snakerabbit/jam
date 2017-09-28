@@ -9,8 +9,8 @@ json.order @conversations.map(&:id)
     latest_message = conversation.messages.last
     if latest_message
       json.latest_message do
-        json.extract! latest_message :body
-        json.created_at latest_message.created_at
+        json.extract! latest_message, :body
+        json.created_at time_ago_in_words(latest_message.created_at)
       end
     end
 
