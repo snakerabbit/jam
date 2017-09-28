@@ -20,6 +20,15 @@ class Api::ResponsesController < ApplicationController
     end
   end
 
+  def update
+    @response = Response.find(params[:id])
+    if @response.update_attributes(response_params)
+      render :show
+    else
+      render json: []
+    end
+  end
+
   def index
     @responses = Response.includes(:question).where("user_id = ?", response_params[:user_id])
     if @responses

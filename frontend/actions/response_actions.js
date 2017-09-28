@@ -30,3 +30,8 @@ export const createResponse = newResponse => dispatch => (
   ResponseApiUtil.createResponse(newResponse)
                  .then(response => dispatch(receiveResponse(response)))
 );
+
+export const updateResponse = updatedResponse => dispatch =>(
+  ResponseApiUtil.updateResponse(updatedResponse)
+                 .then(response => dispatch(receiveResponse(response)))
+);

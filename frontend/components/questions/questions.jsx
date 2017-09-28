@@ -1,6 +1,7 @@
 import React from 'react';
 import {withRouter} from 'react-router-dom';
 import QuestionFormContainer from './question_form_container';
+// import QuestionEditContainer from './question_edit_container';
 
 class Questions extends React.Component {
   constructor(props) {
@@ -32,22 +33,42 @@ class Questions extends React.Component {
     }
   }
 
+
+
   answeredQuestionsDisplay(){
     const answeredQuestions = this.answeredQuestions().map( question => {
-      const questionAnswers = this.props.questions[question.id].answers;
-      const answerDisplay = questionAnswers.map(answer => {
-        if(this.responseIds().includes(answer.id)){
-          return <p key={answer.id}>{answer.body + " ✓"}</p>;
-        } else {
-          return <p key={answer.id}>{answer.body}</p>;
-        }
-      });
-      return(
-        <div key={question.id} className='individual-questions'>
-          <p>{question.body}</p>
-          {answerDisplay}
-        </div>
-      );
+    const questionAnswers = this.props.questions[question.id].answers;
+    const answerDisplay = questionAnswers.map(answer => {
+      if(this.responseIds().includes(answer.id)){
+        return <p key={answer.id}>{answer.body + " ✓"}</p>;
+      } else {
+        return <p key={answer.id}>{answer.body}</p>;
+      }
+    });
+      if(this.props.currentUser.id === parseInt(this.props.currentProfile)){
+        return(
+          <div key={question.id} className='individual-questions'>
+            <p>{question.body}
+              <button className='edit-button'
+                      value={question.id}
+                      onClick={this.handleEdit}>
+                <img className='edit-icon'
+                  src='https://www.materialui.co/materialIcons/editor/mode_edit_white_192x192.png'/>
+              </button>
+            </p>
+            {answerDisplay}
+          </div>
+        );
+      } else {
+        return(
+          <div key={question.id} className='individual-questions'>
+            <p>{question.body}
+            </p>
+            {answerDisplay}
+          </div>
+        );
+      }
+
     });
     return(
       <div className='answered-display'>
@@ -55,6 +76,7 @@ class Questions extends React.Component {
       </div>
     );
   }
+
 
   renderQuestionForm(){
     if(this.props.currentUser.id === parseInt(this.props.currentProfile)){

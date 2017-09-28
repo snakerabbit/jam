@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import Questions from './questions';
 import { fetchQuestions } from '../../actions/question_actions';
-import { fetchResponses } from '../../actions/response_actions';
+import { fetchResponses, updateResponse } from '../../actions/response_actions';
 import { withRouter} from 'react-router-dom';
 
 const mapStateToProps = (state, ownProps) => {
@@ -16,7 +16,8 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = dispatch => {
   return({
     fetchQuestions: () => dispatch(fetchQuestions()),
-    fetchResponses: (userId) => dispatch(fetchResponses(userId))
+    fetchResponses: (userId) => dispatch(fetchResponses(userId)),
+    updateResponse: (response) => dispatch(updateResponse(response))
   });
 };
 

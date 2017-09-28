@@ -20,3 +20,10 @@ export const createResponse = (response) => {
     data: {response}
   });
 };
+
+export const updateResponse = (response) => {
+  return $.ajax({
+    method: "PATCH",
+    url: `api/responses/${response.id}`
+  });
+};
