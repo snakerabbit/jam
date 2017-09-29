@@ -12,7 +12,8 @@ const ResponseReducer = (state=_defaultState, action) => {
     case RECEIVE_RESPONSES:
       return {responses: action.responses};
     case RECEIVE_RESPONSE:
-      return {currentResponse: action.response};
+      let newState = merge({}, state);
+      return merge(newState, {responses: action.response});
     default:
       return state;
   }

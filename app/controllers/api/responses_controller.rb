@@ -4,7 +4,7 @@ class Api::ResponsesController < ApplicationController
     @response = Response.new(response_params)
     @question = @response.question
     if @response.save
-      render :index
+      render :show
     else
       render json: @response.errors, status: 422
     end

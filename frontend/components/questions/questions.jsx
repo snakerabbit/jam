@@ -33,7 +33,7 @@ class Questions extends React.Component {
       edit: true
     });
   }
-  componentDidUpdate(newProps){
+  componentwillReceiveProps(newProps){
     if(this.props.responses !== newProps.responses){
       this.props.fetchQuestions();
       this.props.fetchResponses(this.props.currentProfile);

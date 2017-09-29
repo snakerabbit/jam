@@ -210,6 +210,9 @@ class UserIndex extends React.Component {
       if (matchPercentage < 0){
         matchPercentage = matchPercentage*-1;
       }
+      if (matchPercentage > 100){
+        matchPercentage = 100;
+      }
       return matchPercentage;
 
 

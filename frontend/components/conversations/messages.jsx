@@ -19,11 +19,11 @@ class Messages extends React.Component{
     this.props.fetchConversation(this.props.conversationId);
   }
 
-  componentDidUpdate(newProps) {
+  componentWillReceiveProps(newProps) {
   if (!this.props.currentUser) {
     return;
   }
-  if(this.props !== newProps){
+  if(this.props.currentConversation !== newProps){
     this.props.fetchConversation(this.props.conversationId);
   }
   var out = document.getElementById("out");
