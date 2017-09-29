@@ -13,7 +13,7 @@ const ResponseReducer = (state=_defaultState, action) => {
       return {responses: action.responses};
     case RECEIVE_RESPONSE:
       let newState = merge({}, state);
-      return merge(newState, {responses: action.response});
+      return merge(newState, {responses: {[action.response.id]: action.response}});
     default:
       return state;
   }
