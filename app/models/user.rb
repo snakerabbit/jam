@@ -35,6 +35,27 @@ class User < ApplicationRecord
     through: :responses,
     source: :question
 
+  has_many :messages, {
+      class_name: :Message,
+      primary_key: :id,
+      foreign_key: :author_id
+    }
+
+  has_many :started_conversations,
+    -> {order "updated_at ASC"},
+    class_name: :Conversation,
+    primary_key: :id,
+    foreign_key: :user_one_id
+
+
+  has_many :received_conversations,
+    -> {order "updated_at ASC"},
+    class_name: :Conversation,
+    primary_key: :id,
+    foreign_key: :user_two_id
+
+
+
   def self.find_by_credentials(username, password)
     @user = User.find_by_username(username);
     if @user && @user.is_password?(password)

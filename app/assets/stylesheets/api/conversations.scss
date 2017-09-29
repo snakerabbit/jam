@@ -1,3 +1,41 @@
 // Place all the styles related to the Api::Conversations controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.chatbox {
+  border-bottom-style: solid;
+    border-color: white;
+    border-width: 0.5px;
+    padding-left: 32px;
+    padding: 40px;
+}
+
+.chatbox:hover {
+  background-color:grey;
+  cursor:pointer;
+}
+
+.tabs-container {
+  width:80%;
+}
+
+.other-user {
+  display: inline;
+  font-size: 2em;
+  float: left;
+  margin: 0;
+  padding-top: 13px;
+}
+
+.latest-message {
+  display: flex;
+  justify-content:center;
+  color: grey;
+}
+
+.created-at {
+  display:inline;
+  color: green;
+  float:right;
+  margin:0;
+  margin-top: -42px;
+}

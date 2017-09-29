@@ -26,7 +26,6 @@ class QuestionForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-
     if (this.state.importance === 0) {
       this.setState({ importance: 10 });
     }

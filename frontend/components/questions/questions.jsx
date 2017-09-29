@@ -5,10 +5,15 @@ import QuestionFormContainer from './question_form_container';
 class Questions extends React.Component {
   constructor(props) {
     super(props);
+    this.state={
+      edit: false
+    };
     this.answeredQuestions = this.answeredQuestions.bind(this);
     this.responseIds = this.responseIds.bind(this);
     this.answeredQuestionsDisplay = this.answeredQuestionsDisplay.bind(this);
     this.renderQuestionForm = this.renderQuestionForm.bind(this);
+    this.handleNewAnswer = this.handleNewAnswer.bind(this);
+    this.handleEdit = this.handleEdit.bind(this);
   }
 
   componentDidMount(){
@@ -16,7 +21,26 @@ class Questions extends React.Component {
     this.props.fetchResponses(this.props.currentProfile);
   }
 
-  answeredQuestions () {
+  handleNewAnswer(){
+    this.setState({
+      questions: this.props.questions,
+      responses: this.props.responses
+    });
+  }
+
+  handleEdit(){
+    this.setState({
+      edit: true
+    });
+  }
+  componentDidUpdate(newProps){
+    if(this.props.responses !== newProps.responses){
+      this.props.fetchQuestions();
+      this.props.fetchResponses(this.props.currentProfile);
+    }
+  }
+
+  answeredQuestions(){
     if(Object.keys(this.props.responses).length !== 0) {
       return Object.keys(this.props.responses).map(response => {
         return this.props.responses[response].question;
@@ -32,10 +56,9 @@ class Questions extends React.Component {
     }
   }
 
-
-
   answeredQuestionsDisplay(){
-    const answeredQuestions = this.answeredQuestions().map( question => {
+
+    const answeredQuestions = this.answeredQuestions().map( (question, idx) => {
     const questionAnswers = this.props.questions[question.id].answers;
     const answerDisplay = questionAnswers.map(answer => {
       if(this.responseIds().includes(answer.id)){
@@ -45,18 +68,21 @@ class Questions extends React.Component {
       }
     });
       if(this.props.currentUser.id === parseInt(this.props.currentProfile)){
-        return(
-          <div key={question.id} className='individual-questions'>
-            <p>{question.body}
-              <button className='edit-button'
-                      value={question.id}>
-                <img className='edit-icon'
-                  src='https://www.materialui.co/materialIcons/editor/mode_edit_white_192x192.png'/>
-              </button>
-            </p>
-            {answerDisplay}
-          </div>
-        );
+          return(
+            <div>
+             <div key={question.id} className='individual-questions'>
+              <p>{question.body}
+                <button className='edit-button'
+                        value={question.id}
+                        onClick = {()=> this.handleEdit()}>
+                  <img className='edit-icon'
+                    src='https://www.materialui.co/materialIcons/editor/mode_edit_white_192x192.png'/>
+                </button>
+              </p>
+              {answerDisplay}
+            </div>
+           </div>
+          );
       } else {
         return(
           <div key={question.id} className='individual-questions'>
@@ -81,7 +107,7 @@ class Questions extends React.Component {
       return(
         <div>
           <div className='answer-questions-header'>
-            <p>Answer Questions: </p>
+            <h3>Answer Questions:</h3>
           </div>
           <QuestionFormContainer/>
         </div>
@@ -98,14 +124,15 @@ class Questions extends React.Component {
         </div>
       );
     } else {
-      return(
-        <div className='answered-questions'>
-          {this.renderQuestionForm()}
-          {this.answeredQuestionsDisplay()}
-        </div>
-      );
+        return(
+          <div className='answered-questions'>
+            {this.renderQuestionForm()}
+            {this.answeredQuestionsDisplay()}
+          </div>
+        );
+      }
+
     }
-  }
 
 }
 

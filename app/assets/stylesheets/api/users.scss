@@ -2,18 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.user-profile {
-  background-color: black;
-  opacity: 0.8;
-  color: white;
-  display: block;
-  height: 400px;
-  width: 90%;
-  margin: 0 auto;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  margin-bottom: 25px;
-}
 
 .user-profile > ul {
   display: block;
@@ -47,7 +35,7 @@
   display: inline-block;
   margin: 0 auto;
   padding-right: 25px;
-  padding-left: 25px;
+  padding-left: 80px;
   justify-content: space-between;
 }
 
@@ -57,12 +45,13 @@
 
 .user-index {
   align-items:center;
-  padding-top: 100px;
+  padding-top: 60px;
   display: flex;
-  width: 80%;
+  width: 79%;
   margin: 0 auto;
   background-color: black;
   opacity: 0.8;
+  margin-top:-89px;
 }
 .user-index > * {
   padding-right: 30px;
@@ -81,16 +70,18 @@
 .index-search-bar {
   width: 84%;
   margin: 0 auto;
-  height: 300px;
+  height: 215px;
   color: white;
 }
 
 .index-search-container {
   width: 90%;
   margin: 0 auto;
-  padding-top: 100px;
+  padding-top: 40px;
   background-color: black;
   opacity: 0.9;
+  height: 30px;
+  padding-bottom: 40px;
 }
 
 .index-search-bar * {
@@ -125,6 +116,8 @@ a:hover{
 .browse-users {
   justify-content: space-between;
   flex-direction: column;
+  overflow:scroll;
+  height: 584px;
 }
 
 .profile-tabs-buttons {
@@ -209,4 +202,35 @@ label {
 
 .user-index-username {
   font-size: 16pt;
+}
+
+.profile {
+  width:90%;
+  margin:0 auto;
+  overflow: scroll;
+  height: 600px;
+}
+
+
+.user-img {
+  height: 80%;
+  width: initial;
+  float: left;
+  border-style:hidden;
+  border-radius: 50px;
+  object-fit: cover;
+
+}
+
+.user-profile {
+  background-color: black;
+    opacity: 0.8;
+    color: white;
+    display: block;
+    height: 237px;
+    width: 90%;
+    margin: 0 auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-bottom: 25px;
 }

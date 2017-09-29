@@ -60,7 +60,6 @@ class Conversation extends React.Component {
 
     return(
       <div>
-        <h3>Messages</h3>
         <TabsContainer
          tabs={[this.received(), this.sent()]}
          tabLabels={["Received", "Sent"]}

@@ -13,10 +13,19 @@ class Messages extends React.Component{
     this.displayMessages = this.displayMessages.bind(this);
     this.messageForm = this.messageForm.bind(this);
     this.otherUserName = this.otherUserName.bind(this);
-    console.log(this.state);
+    console.log(this.props);
   }
 
   componentDidMount(){
+    this.props.fetchConversation(this.props.conversationId);
+  }
+
+  componentDidUpdate() {
+  if (!this.props.currentUser) {
+    return;
+  }
+    var node = ReactDOM.findDOMNode(this.refs.myDiv);
+    node.scrollTop = node.scrollHeight;
   }
 
   otherUserName(){
@@ -93,13 +102,14 @@ class Messages extends React.Component{
 
 
   render(){
-    return(
-      <div>
-        <h3>MESSAGES YEAH</h3>
-        {this.messageForm()}
-      </div>
-    );
+      return(
+        <div>
+          <h3>{this.otherUserName()}</h3>
+          {this.messageForm()}
+        </div>
+      );
+    }
+
   }
-}
 
 export default Messages;

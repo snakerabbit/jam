@@ -14,7 +14,7 @@ import ConversationsContainer from './conversations/conversations_container';
 import MessagesContainer from './conversations/messages_container';
 
 const App = () =>(
-  <div >
+  <div className='app'>
       <NavBarContainer/>
       <br/>
       <br/>

@@ -54,7 +54,7 @@ class Profile extends React.Component {
     const user = this.props.user;
 
     return(
-      <div>
+      <div className='profile'>
         <UserBasicsContainer/>
         <div>
           <TabsContainer

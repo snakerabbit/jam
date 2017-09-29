@@ -1,13 +1,14 @@
 import { connect } from 'react-redux';
 import QuestionForm from './question_form';
-import { createResponse } from '../../actions/response_actions';
+import { createResponse, fetchResponses } from '../../actions/response_actions';
 
 
 const mapStateToProps = state => {
   return({
     currentUser: state.session.currentUser,
     responses: state.responses.responses,
-    questions: state.questions.questions
+    questions: state.questions.questions,
+
   });
 };
 
