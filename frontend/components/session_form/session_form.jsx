@@ -36,6 +36,10 @@ class SessionForm extends React.Component {
           <button type="submit"
                   onClick={() => this.setState({username: "guest", password: 'password'})}>Guest Login</button>
         );
+      } else {
+        return(
+          <div></div>
+        );
       }
   }
 

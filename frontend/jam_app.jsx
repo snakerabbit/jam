@@ -23,5 +23,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
   window.fetchUsers = UserApiUtil.fetchUsers;//testing only
   window.fetchQuestions = QuestionsAPIUtil.fetchQuestions;//testing only
   window.fetchConversations = ConversationApiUtil.fetchConversations;
+  window.fetchConversation = ConversationApiUtil.fetchConversation;
+  window.createMessage = ConversationApiUtil.createMessage;
   ReactDOM.render(<Root store={store}/>, root);
 });

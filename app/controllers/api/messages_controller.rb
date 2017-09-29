@@ -1,6 +1,6 @@
 class Api::MessagesController < ApplicationController
   def create
-    @message = Message.new(message_params)
+    @message = Message.create(message_params)
     if logged_in?
       @message.author_id = current_user.id
     end

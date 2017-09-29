@@ -6,9 +6,8 @@ import Messages from './messages';
 const mapStateToProps = (state, ownProps) =>{
   return({
     currentUser: state.session.currentUser,
-    currentProfile: ownProps.match.params.userId,
     conversationId: ownProps.match.params.conversationsId,
-    currentConversation: state.conversations.conversation
+    currentConversation: state.conversations.currentConversation
   });
 };
 

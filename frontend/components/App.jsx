@@ -12,6 +12,7 @@ import QuestionFormContainer from './questions/question_form_container';
 import ProfileContainer from './profile/profile_container';
 import ConversationsContainer from './conversations/conversations_container';
 import MessagesContainer from './conversations/messages_container';
+import Splash from './home/splash';
 
 const App = () =>(
   <div className='app'>
@@ -23,6 +24,7 @@ const App = () =>(
       <br/>
       <AuthRoute path='/login' component={SessionFormContainer}/>
       <AuthRoute path='/signup' component={SessionFormContainer}/>
+      <AuthRoute exact path='/' component = {Splash}/>
       <Route exact path='/' component = {Footer}/>
 
       <Switch>

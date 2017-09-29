@@ -61,7 +61,7 @@ button, input[type="submit"] {
 }
 
 input[type='text'], input[type='password'] {
-  width: 300px;
+  width: 100%;
 }
 
 
@@ -81,4 +81,26 @@ p {
   padding-left: 30px;
   font-size: 14pt;
   color: white;
+}
+
+html, body {
+  margin: 0;
+  height: 100%;
+  min-height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+header,
+footer {
+  flex: none;
+}
+
+main {
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  flex: auto;
 }

@@ -13,28 +13,32 @@ class Messages extends React.Component{
     this.displayMessages = this.displayMessages.bind(this);
     this.messageForm = this.messageForm.bind(this);
     this.otherUserName = this.otherUserName.bind(this);
-    console.log(this.props);
   }
 
   componentDidMount(){
     this.props.fetchConversation(this.props.conversationId);
   }
 
-  componentDidUpdate() {
+  componentDidUpdate(newProps) {
   if (!this.props.currentUser) {
     return;
   }
-    var node = ReactDOM.findDOMNode(this.refs.myDiv);
-    node.scrollTop = node.scrollHeight;
+  if(this.props !== newProps){
+    this.props.fetchConversation(this.props.conversationId);
+  }
+  var out = document.getElementById("out");
+  var isScrolledToBottom = out.scrollHeight - out.clientHeight <= out.scrollTop + 1;
   }
 
   otherUserName(){
-    if (!this.props.currentUser) {
-      return null;
-    } else if (this.props.currentUser.id === this.props.conversation.user_two.id) {
-      return this.props.conversation.user_one.username;
-    } else {
-      return this.props.conversation.user_two.username;
+    if(this.props.currentConversation){
+      if (!this.props.currentUser) {
+        return null;
+      } else if (this.props.currentUser.id === this.props.currentConversation.user_two.id) {
+        return this.props.currentConversation.user_one.username;
+      } else {
+        return this.props.currentConversation.user_two.username;
+      }
     }
   }
 
@@ -58,6 +62,7 @@ class Messages extends React.Component{
     e.preventDefault();
 
     const newMessage = {
+      conversation_id: this.props.conversationId,
       body: this.state.messageText
     };
 
@@ -73,7 +78,8 @@ class Messages extends React.Component{
         <input type='text'
                value={this.state.messageText}
                onChange={this.handleChange}
-               placeholder="Tell me what you\'re thinking"
+               placeholder="Tell me what you're thinking"
+               className='input-message'
                />
         <input type='submit' value="Send"/>
       </form>
@@ -81,31 +87,36 @@ class Messages extends React.Component{
   }
 
   displayMessages() {
-  if (!this.props.conversation.messages) {
-    return (
-      <div>
-      </div>
-    );
-  } else {
-    return (
-      Object.keys(this.props.conversation.messages).map((message) => {
-        let message_body = this.props.conversation.messages[message].body;
-        return(
-          <div key={message}>
-            <p>{message_body}</p>
-          </div>
-        );
-      })
-    );
+    if(this.props.currentConversation) {
+      return (
+        Object.keys(this.props.currentConversation.messages).map((message) => {
+          let message_body = this.props.currentConversation.messages[message].body;
+          let message_styling = this.props.currentConversation.messages[message].author_id === this.props.currentUser.id ?
+              "user-styling" : "other-user-styling";
+          return(
+            <div key={message} className='chat-bubble'>
+              <p className={message_styling}>{message_body}</p>
+            </div>
+          );
+        })
+      );
+    } else {
+      return(
+        <div></div>
+      );
     }
   }
 
 
   render(){
+
       return(
         <div>
-          <h3>{this.otherUserName()}</h3>
+        <h3>{this.otherUserName()}</h3>
+        <div className='chat-container'>
+          {this.displayMessages()}
           {this.messageForm()}
+        </div>
         </div>
       );
     }
