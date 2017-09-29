@@ -33,7 +33,7 @@ Like OKCupid, users can answer questions which pertain to their personalities an
 ![UserBrowse](https://image.ibb.co/cAxwgG/Screen_Shot_2017_09_29_at_10_40_05_AM.png)
 
 
-![Questions](https://image.ibb.co/mCGHow/Screen_Shot_2017_09_29_at_10_36_11_AM.png)
+![Questions](https://image.ibb.co/hfhAab/Screen_Shot_2017_09_29_at_10_57_39_AM.png)
 
 Users can also browse other user profiles with a filter based on which instrument the other users play.  This provides the users with the ability to search for specific types of musicians to reach out to.
 
