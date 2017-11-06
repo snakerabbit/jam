@@ -7,7 +7,7 @@ export default () =>{
       <div className='test'>
         <a href='https://github.com/snakerabbit/jam' className = 'footer-links'>Github</a>
         <a href='https://www.linkedin.com/in/alison-cheng/' className = 'footer-links'>LinkedIn</a>
-        <a href='http://www.alisoncheng.me/' className = 'footer-links'>Alison Cheng</a>
+        <a href='http://www.alisoncheng.me/' className = 'footer-links'>Portfolio</a>
       </div>
     </div>
   );

@@ -6,6 +6,10 @@ class AboutMe extends React.Component {
     super(props);
     this.renderEditButton = this.renderEditButton.bind(this);
     this.handleClick = this.handleClick.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.state={
+      edit: false
+    };
   }
   componentDidMount() {
     this.props.fetchUser(this.props.match.params.userId);
@@ -19,11 +23,29 @@ class AboutMe extends React.Component {
 
   handleClick(input){
     console.log("input", input);
+    this.setState({
+      edit: true
+    });
+  }
 
+  handleSubmit(){
+  }
+
+  renderForm(){
+    if(this.state.edit){
+      return(
+        <div>
+          <form>
+            <textarea className='edit-text'></textarea>
+            <input type='submit' onSubmit={()=>this.handleSubmit()}></input>
+          </form>
+        </div>
+      );
+    }
   }
 
   renderEditButton(input){
-    if(this.props.currentUser.id === parseInt(this.props.match.params.userId)){
+    if(this.props.currentUser.id === parseInt(this.props.match.params.userId) && !this.state.edit){
       return(
         <button onClick={()=>this.handleClick(input)}className='edit-button'>
           <img className = 'edit-icon' src='http://cdn.mysitemyway.com/icons-watermarks/simple-light-gray/bfa/bfa_edit/bfa_edit_simple-light-gray_512x512.png'/>
@@ -46,6 +68,7 @@ class AboutMe extends React.Component {
           <ul>
             <h1 className='about-me-h3'>About Me: </h1>
               {this.renderEditButton("about_me")}
+              {this.renderForm()}
             <p>{user.about_me}</p>
             <h1 className='about-me-h3'>Favorite Bands: </h1>
               {this.renderEditButton("fave_bands")}
