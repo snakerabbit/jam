@@ -2,7 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
+.edit-button {
+  -webkit-appearance: none;
+  background:none;
+}
 .user-profile > ul {
   display: block;
   width: 50%;
@@ -139,6 +142,7 @@ a:hover{
 
 .about-me-h3 {
   margin: 0;
+  display: inline;
 }
 
 ul {

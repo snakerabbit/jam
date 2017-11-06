@@ -4,10 +4,11 @@ import { Link } from 'react-router-dom';
 class AboutMe extends React.Component {
   constructor(props) {
     super(props);
+    this.renderEditButton = this.renderEditButton.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
   componentDidMount() {
     this.props.fetchUser(this.props.match.params.userId);
-
   }
 
   componentWillReceiveProps(nextProps) {
@@ -15,6 +16,26 @@ class AboutMe extends React.Component {
       this.props.fetchUser(nextProps.match.params.userId);
     }
   }
+
+  handleClick(input){
+    console.log("input", input);
+
+  }
+
+  renderEditButton(input){
+    if(this.props.currentUser.id === parseInt(this.props.match.params.userId)){
+      return(
+        <button onClick={()=>this.handleClick(input)}className='edit-button'>
+          <img className = 'edit-icon' src='http://cdn.mysitemyway.com/icons-watermarks/simple-light-gray/bfa/bfa_edit/bfa_edit_simple-light-gray_512x512.png'/>
+        </button>
+      );
+    } else {
+      return(
+        <div></div>
+      );
+    }
+  }
+
 
   render () {
     const user = this.props.user;
@@ -24,12 +45,16 @@ class AboutMe extends React.Component {
         <div className = 'about-me'>
           <ul>
             <h1 className='about-me-h3'>About Me: </h1>
+              {this.renderEditButton("about_me")}
             <p>{user.about_me}</p>
             <h1 className='about-me-h3'>Favorite Bands: </h1>
+              {this.renderEditButton("fave_bands")}
             <p>{user.fave_bands}</p>
             <h1 className='about-me-h3'>Favorite Genres: </h1>
+              {this.renderEditButton("fave_genres")}
             <p>{user.fave_genres}</p>
             <h1 className='about-me-h3'>Why I'm Here: </h1>
+              {this.renderEditButton("purpose")}
             <p>{user.purpose}</p>
           </ul>
         </div>
