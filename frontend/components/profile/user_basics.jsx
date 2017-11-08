@@ -18,8 +18,9 @@ class UserBasics extends React.Component {
   }
 
   messageUser(){
-    
+
   }
+
 
   render () {
     const user = this.props.user;
