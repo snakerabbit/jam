@@ -186,6 +186,10 @@ label {
   padding: none;
   margin: 0 auto;
 }
+.edit-button-detail {
+  background: none;
+  border: none;
+}
 .render-tab {
   padding-bottom: 36px;
     border-bottom-style: solid;
@@ -232,9 +236,13 @@ div {
 
 }
 
+.essay-block{
+  padding-left: 3%;
+}
+
 .user-img {
-  height: 80%;
-  width: 25%;
+  height: 180px;
+  width: 180px;
   float: left;
   border-style:hidden;
   border-radius: 50%;

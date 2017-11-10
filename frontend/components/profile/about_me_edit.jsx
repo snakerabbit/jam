@@ -83,7 +83,7 @@ class AboutMeEdit extends React.Component {
   editTitle(){
     return(
       <div>
-        <button onClick={this.handleClick}>
+        <button className='edit-button-detail' onClick={this.handleClick}>
           <h3 className="detail">{this.props.detailTitle}</h3>
         </button>
       </div>

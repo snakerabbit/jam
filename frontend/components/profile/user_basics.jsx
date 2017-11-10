@@ -41,7 +41,7 @@ class UserBasics extends React.Component {
     return(
       <div>
         <div className = 'user-profile'>
-              <img src={user.image_url} className='user-img'/>
+            <img src={user.image_url} className='user-img'/>
           <ul>
             <h1>{user.username}</h1>
             <h2>City: {user.city}</h2>
