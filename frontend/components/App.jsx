@@ -17,11 +17,6 @@ import Splash from './home/splash';
 const App = () =>(
   <div className='app'>
       <NavBarContainer/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
       <AuthRoute path='/login' component={SessionFormContainer}/>
       <AuthRoute path='/signup' component={SessionFormContainer}/>
       <AuthRoute exact path='/' component = {Splash}/>

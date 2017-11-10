@@ -1,6 +1,6 @@
 .tabs-container {
   margin: 0 auto;
-  height: 600px;
+  background-color: black;
 }
 
 .tab-labels {
@@ -13,19 +13,23 @@
 }
 
 .tabs {
-  height: 526px;
-  border-width: 0.5px;
+  border-top: solid;
+  border-width: 0.1px;
   background-color: black;
-  opacity: 0.7;
-  overflow: scroll;
 }
 .individual-tab:hover {
-  background-color: grey;
+  border-bottom:solid;
+  border-color: white;
+  border-width:5px;
   cursor: pointer;
+}
+.individual-tab::selection {
+  border-bottom:solid;
+  border-color: white;
+  border-width:5px;
 }
 
 .individual-tab {
-  border: solid;
   border-color: white;
   width: 20%;
   margin: 0 auto;

@@ -72,9 +72,9 @@ class AboutMeEdit extends React.Component {
 
   displayTitle(){
     return(
-      <div>
+      <div className='title-container'>
         <div>
-          <h3 className="detail">{this.props.detailTitle}</h3>
+          <h2 className="detail">{this.props.detailTitle}</h2>
         </div>
       </div>
     );
@@ -133,7 +133,7 @@ class AboutMeEdit extends React.Component {
       return null;
     } else if (this.props.currentUser.id === this.props.user.id) {
       return (
-        <div>
+        <div className='title-container'>
           {this.editTitle()}
           {this.currentText()}
         </div>

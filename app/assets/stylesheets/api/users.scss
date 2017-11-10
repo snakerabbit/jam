@@ -54,7 +54,6 @@
   display: flex;
   margin: 0 auto;
   background-color: black;
-  opacity: 0.8;
   margin-top:-89px;
 }
 .user-index > * {
@@ -236,7 +235,9 @@ div {
 .essay-block{
   padding-left: 3%;
 }
-
+.title-container{
+  margin-top:5px;
+}
 .user-img {
   height: 180px;
   width: 180px;
@@ -255,7 +256,6 @@ div {
 
 .user-profile {
   background-color: black;
-    opacity: 0.8;
     color: white;
     display: block;
     height: 237px;

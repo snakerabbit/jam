@@ -229,6 +229,10 @@ user13 = User.create(username: "guest",
                      instrument: "voice",
                      looking_for: "producer",
                      image_url: "https://storally.com/img/user.png",
+                     about_me:"I am a guest user",
+                     fave_bands:"I love all bands",
+                     fave_genres:"rock, electronic, hip hop",
+                     purpose:"Looking for people to jam with"
                      )
 #thom york responses
 r1 = Response.create(answer_id: answer1.id, user_id: user1.id, importance: 1, accepted_answers:[1], explanation: "")
