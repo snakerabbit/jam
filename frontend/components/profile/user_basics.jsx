@@ -7,8 +7,6 @@ class UserBasics extends React.Component {
     this.state={
       imageUrl:null
     };
-    this.cloudinate=this.cloudinate.bind(this);
-    this.profilePic=this.profilePic.bind(this);
   }
   componentDidMount() {
     this.props.fetchUser(this.props.match.params.userId);
@@ -21,10 +19,6 @@ class UserBasics extends React.Component {
     }
   }
 
-  cloudinate(e){
-    e.preventDefault();
-
-  }
 
   profilePic(){
 
