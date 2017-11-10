@@ -7,11 +7,13 @@
   background:none;
 }
 .user-profile > ul {
-  display: block;
   width: 50%;
   height: 100%;
-  margin: 0 auto;
   opacity: 1.0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding:0;
 }
 
 .user-profile > ul * {
@@ -50,7 +52,6 @@
   align-items:center;
   padding-top: 60px;
   display: flex;
-  width: 79%;
   margin: 0 auto;
   background-color: black;
   opacity: 0.8;
@@ -71,14 +72,12 @@
 }
 
 .index-search-bar {
-  width: 84%;
   margin: 0 auto;
   height: 215px;
   color: white;
 }
 
 .index-search-container {
-  width: 90%;
   margin: 0 auto;
   padding-top: 40px;
   background-color: black;
@@ -126,6 +125,12 @@ a:hover{
 .profile-tabs-buttons {
   width: 90%;
   margin: 0 auto;
+}
+.image-button{
+    -webkit-appearance: none;
+    background:none;
+    border:none;
+    display:inline;
 }
 
 .edit-text {
@@ -212,6 +217,10 @@ label {
   font-size: 16pt;
 }
 
+div {
+  color:white;
+}
+
 .profile {
   width:90%;
   margin:0 auto;
@@ -219,15 +228,24 @@ label {
   height: 600px;
 }
 
+.user-img:hover{
+
+}
 
 .user-img {
   height: 80%;
-  width: initial;
+  width: 25%;
   float: left;
   border-style:hidden;
-  border-radius: 50px;
+  border-radius: 50%;
   object-fit: cover;
+  position:relative;
+  margin-left:8%;
+  margin-top:3%;
+}
 
+.user-profile-div{
+  display:flex;
 }
 
 .user-profile {
@@ -241,4 +259,6 @@ label {
     padding-top: 20px;
     padding-bottom: 20px;
     margin-bottom: 25px;
+    flex-direction: row;
+    display: flex;
 }

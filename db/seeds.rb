@@ -224,10 +224,11 @@ user12 = User.create(username: "MethodMan",
                     purpose:"Looking for people to jam with"
                     )
 user13 = User.create(username: "guest",
+                     city: "San Francisco",
                      password: "password",
                      instrument: "voice",
                      looking_for: "producer",
-                     image_url: "http://www.iconsdb.com/icons/preview/gray/guest-xxl.png",
+                     image_url: "https://storally.com/img/user.png",
                      )
 #thom york responses
 r1 = Response.create(answer_id: answer1.id, user_id: user1.id, importance: 1, accepted_answers:[1], explanation: "")

@@ -9,7 +9,7 @@ class Profile extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      selectedTab: 0
+      selectedTab: 0,
     };
     this.handleClick = this.handleClick.bind(this);
     this.renderTab = this.renderTab.bind(this);
