@@ -127,8 +127,6 @@ class Conversation extends React.Component {
          tabs={[this.received(), this.sent()]}
          tabLabels={["Received", "Sent"]}
        />
-       <button onClick={this.newConversation}>Create New Conversation</button>
-       {this.conversationForm()}
       </div>
 
     );
