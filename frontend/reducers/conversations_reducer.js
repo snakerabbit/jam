@@ -8,7 +8,7 @@ const ConversationsReducer = (state = {}, action) =>{
     case RECEIVE_CONVERSATIONS:
       return {conversations: action.conversations};
     case RECEIVE_CONVERSATION:
-      return merge({}, state, {[action.conversation.id]: action.conversation});
+      return {currentConversation: action.conversation};
     default:
       return state;
   }

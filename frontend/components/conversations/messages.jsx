@@ -6,7 +6,8 @@ class Messages extends React.Component{
   constructor(props){
     super(props);
     this.state={
-      messageText:""
+      messageText:"",
+      currentConversation: this.props.currentConversation
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -23,7 +24,7 @@ class Messages extends React.Component{
   if (!this.props.currentUser) {
     return;
   }
-  if(this.props.currentConversation !== newProps){
+  if(this.props.currentConversation !== newProps.currentConversation){
     this.props.fetchConversation(this.props.conversationId);
   }
   var out = document.getElementById("out");
@@ -65,11 +66,8 @@ class Messages extends React.Component{
       conversation_id: this.props.conversationId,
       body: this.state.messageText
     };
-
-    this.props.createMessage(newMessage)
-    .then(() => {
-    this.setState({ messageText: "" });
-    });
+    this.props.createMessage(newMessage);
+    console.log("this.props", this.props);
   }
 
   messageForm(){
@@ -87,7 +85,9 @@ class Messages extends React.Component{
   }
 
   displayMessages() {
+
     if(this.props.currentConversation) {
+          console.log("local state", this.state);
       return (
         Object.keys(this.props.currentConversation.messages).map((message) => {
           let message_body = this.props.currentConversation.messages[message].body;
@@ -109,7 +109,6 @@ class Messages extends React.Component{
 
 
   render(){
-
       return(
         <div>
         <h3>{this.otherUserName()}</h3>
