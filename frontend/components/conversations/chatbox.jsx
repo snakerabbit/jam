@@ -31,7 +31,7 @@ class ChatBox extends React.Component {
         return(
           <div className='chatbox'>
             <Link to={`/conversations/${this.props.conversationId}`}>
-              <h3 className='other-user'>{this.otherUser()}</h3>
+              <h1 className='other-user'>{this.otherUser()}</h1>
               <p className='latest-message'>Last Message: {this.props.conversation.latest_message.body}</p>
               <p className='created-at'>Sent: {this.props.conversation.latest_message.created_at} ago</p>
             </Link>
