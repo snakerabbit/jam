@@ -191,6 +191,16 @@ label {
 .edit-button-detail {
   background: none;
   border: none;
+  display:flex;
+  font-size:100%;
+  padding-left:0;
+}
+
+
+.editicon{
+  width: 17px;
+  margin-top: 18px;
+  margin-left: 9px;
 }
 .render-tab {
   padding-bottom: 36px;

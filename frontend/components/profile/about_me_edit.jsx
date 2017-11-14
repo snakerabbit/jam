@@ -1,4 +1,5 @@
 import React from 'react';
+import merge from 'lodash/merge';
 
 class AboutMeEdit extends React.Component {
   constructor(props){
@@ -48,10 +49,8 @@ class AboutMeEdit extends React.Component {
     console.log("user", this.props.user);
     console.log("updatedDetail", updatedDetail);
     const user = Object.assign({}, this.props.user, updatedDetail);
-    console.log("updateduser", user);
     console.log(this.props.updateUser);
-    this.props.updateUser(user);
-    console.log("updated?", user);
+    this.props.updateUser(user).then(()=>this.setState({edit:false}));
   }
 
   handleChange(e){
@@ -63,8 +62,9 @@ class AboutMeEdit extends React.Component {
 
   handleCancel(e){
     e.preventDefault();
+    console.log("this.state.previousInput", this.state.previousInput);
     this.setState({
-      nextInput: this.state.previousInput,
+      nextInput: this.props.userInput,
       previousInput: "",
       edit: false
     });
@@ -85,6 +85,7 @@ class AboutMeEdit extends React.Component {
       <div>
         <button className='edit-button-detail' onClick={this.handleClick}>
           <h2 className="detail">{this.props.detailTitle}</h2>
+          <img className='editicon'src='http://cdn.mysitemyway.com/icons-watermarks/simple-light-gray/bfa/bfa_edit/bfa_edit_simple-light-gray_512x512.png'/>
         </button>
       </div>
     );
@@ -94,7 +95,7 @@ class AboutMeEdit extends React.Component {
     return(
         <form>
           <textarea
-            placeHolder={this.props.placeHolder}
+            placeholder={this.props.placeHolder}
             onChange={this.handleChange}
             value={this.state.nextInput}/>
           <input type="submit" value="save" onClick={this.handleUpdate}/>
@@ -133,7 +134,7 @@ class AboutMeEdit extends React.Component {
       return null;
     } else if (this.props.currentUser.id === this.props.user.id) {
       return (
-        <div className='title-container'>
+        <div className='essay-block'>
           {this.editTitle()}
           {this.currentText()}
         </div>
