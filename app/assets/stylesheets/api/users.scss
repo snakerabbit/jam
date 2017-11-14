@@ -228,9 +228,6 @@ div {
   overflow: scroll;
 }
 
-.user-img:hover{
-
-}
 
 .essay-block{
   padding-left: 3%;
@@ -248,10 +245,40 @@ div {
   position:relative;
   margin-left:8%;
   margin-top:3%;
+  top:0;
+  left:0;
+}
+
+.dropzone{
+  border: dashed;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  height: 200px;
+  width: 400px;
+
+}
+
+.dropzone:hover{
+  cursor:pointer;
+  opacity:0.5;
 }
 
 .user-profile-div{
   display:flex;
+}
+
+.profile-pic-button{
+  position: absolute;
+  top: 50%;
+  left: 13%;
+  opacity:0;
+  background-color:black;
+
+}
+
+.profile-pic-button:hover{
+  opacity:0.8;
 }
 
 .user-profile {
@@ -265,4 +292,7 @@ div {
     margin-bottom: 25px;
     flex-direction: row;
     display: flex;
+    position:relative;
+    top:0;
+    left:0;
 }

@@ -37,6 +37,7 @@ class Profile extends React.Component {
       });
     }
   }
+ 
 
   renderTab(){
     if(this.state.selectedTab === 0){
