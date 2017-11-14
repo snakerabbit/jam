@@ -28,6 +28,11 @@ export default ({currentUser, logout}) =>{
           Log In
         </p>
       </Link>
+      <Link to='/login'>
+        <p>
+          Demo Login
+        </p>
+      </Link>
       <Link to='/signup'>
         <p>
           Sign Up
