@@ -3,6 +3,7 @@ import Dropzone from 'react-dropzone';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import Modal from 'react-modal';
+import merge from 'lodash/merge';
 
 const customStyles={
   overlay : {
@@ -45,7 +46,6 @@ class UserBasics extends React.Component {
     this.handleDrop = this.handleDrop.bind(this);
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
-    console.log("this.props", this.props);
   }
   componentDidMount() {
     this.props.fetchUser(this.props.match.params.userId);
@@ -78,7 +78,7 @@ class UserBasics extends React.Component {
     } else {
       return(
         <div></div>
-      )
+      );
     }
   }
 
@@ -99,20 +99,21 @@ class UserBasics extends React.Component {
       }).then(response => {
         const data = response.data;
         const fileURL = data.secure_url;
-        console.log(data);
+        const user = this.props.currentUser;
+        const newUser = merge(user, {image_url: fileURL});
+        this.props.updateUser(newUser).then(()=>
+          this.closeModal());
       });
     });
 
-    // Once all the files are uploaded
     axios.all(uploaders).then(() => {
-
     });
   }
 
 
   render () {
     const user = this.props.user;
-
+    console.log("this.state", this.state);
     return(
       <div>
         <Modal
@@ -129,6 +130,9 @@ class UserBasics extends React.Component {
           >
             <p>Drop your Photo or Click Here to Upload</p>
           </Dropzone>
+          <button onClick={this.closeModal} className='close-modal-button'>
+            <h2 >Close</h2>
+          </button>
         </Modal>
         <div className = 'user-profile'>
           <img src={user.image_url} className='user-img'/>

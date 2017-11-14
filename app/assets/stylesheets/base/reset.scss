@@ -60,6 +60,15 @@ button, input[type="submit"] {
   color: white;
 }
 
+button:active{
+  outline: none;
+  border: none;
+}
+
+button:focus{
+  outline:0;
+}
+
 input[type='text'], input[type='password'] {
   width: 100%;
 }
