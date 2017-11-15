@@ -44,7 +44,6 @@
   display: inline-block;
   margin: 0 auto;
   padding-right: 25px;
-  padding-left: 80px;
   justify-content: space-between;
 }
 
@@ -194,6 +193,13 @@ label {
   display:flex;
   font-size:100%;
   padding-left:0;
+}
+
+.user-index-ul{
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
 

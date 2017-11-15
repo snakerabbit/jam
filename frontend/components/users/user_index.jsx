@@ -228,7 +228,7 @@ class UserIndex extends React.Component {
             </div>
           </div>
           <div className = 'user-index'>
-          <ul>
+          <ul className='user-index-ul'>
             {this.mapUsers()};
           </ul>
         </div>
